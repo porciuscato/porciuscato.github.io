@@ -1,3 +1,5 @@
+title: Cato's Blog
+
 collections:
   authors:
     output: true
@@ -22,9 +24,14 @@ author:
   name: cato
   email: mpcato@naver.com
   github: porciuscato
+  bio: Hope you have a good day:)
+  linkedin: jinhong-park-8119a2160
+  pinterest: false
 
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
+
+  sidebar_background_image: https://www.dropbox.com/s/g9h23zrycedxtk5/sky.png?raw=1
