@@ -18,7 +18,13 @@ defaults:
     values:
       layout: "default"
 
+author:
+  name: cato
+  email: mpcato@naver.com
+  github: porciuscato
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-paginate

@@ -1,3 +1,5 @@
-.current { color: #238123; }
+.current { color: white; }
+
+.not-current { color: #eaf1ef; }
 
 /*# sourceMappingURL=styles.css.map */
