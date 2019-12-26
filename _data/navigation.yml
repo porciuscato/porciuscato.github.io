@@ -1,0 +1,13 @@
+- name: Home
+  link: /
+- name: About
+  link: /about.html
+- name: Categories
+  link: /categories.html
+  submenu:
+    - name: computer science
+      link: /categories.html
+    - name: issues
+      link: /categories.html
+    - name: resources
+      link: /categories.html

@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<link rel="shortcut icon" type="image/png" href="/favicon.png" />
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@koint">
+<meta name="twitter:creator" content="@koint">
+
+<!-- SEO stuff -->
+<title>마크다운 작성법</title>
+<meta property="og:title" content="마크다운 작성법" />
+<meta name="twitter:title" content="마크다운 작성법">
+
+
+
+    <meta name="description" content="마크다운은 간단히 문서를 작성할 때 아주 편리한 도구입니다. 사용법을 익히면 쉽고 빠르게 구조를 갖춘 문서를 만들 수 있습니다. 마크다운의 간단한 문법들을 정리해 보았습니다." />
+    <meta property="og:description" content="마크다운은 간단히 문서를 작성할 때 아주 편리한 도구입니다. 사용법을 익히면 쉽고 빠르게 구조를 갖춘 문서를 만들 수 있습니다. 마크다운의 간단한 문법들을 정리해 보았습니다." />
+    <meta name="twitter:description" content="마크다운은 간단히 문서를 작성할 때 아주 편리한 도구입니다. 사용법을 익히면 쉽고 빠르게 구조를 갖춘 문서를 만들 수 있습니다. 마크다운의 간단한 문법들을 정리해 보았습니다.">
+
+<link rel="canonical" href="http://localhost:4000/computer/science/2019/12/03/markdown.html" />
+<meta property="og:url" content="http://localhost:4000/computer/science/2019/12/03/markdown.html" />
+<meta name="twitter:url" content="http://localhost:4000/computer/science/2019/12/03/markdown.html">
+
+<meta property="og:site_name" content="" />
+<meta property="og:image" content="http://localhost:4000/assets/images//computer/science/2019/12/03/markdown/top.jpg" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images//computer/science/2019/12/03/markdown/top.jpg">
+
+ <!-- if it's an article -->
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-03T00:00:00+09:00" />
+<meta property="article:modified_time" content="2019-12-03T00:00:00+09:00" />
+
+
+
+
+    
+    <meta content="computer" property="article:section">
+    
+
+
+
+    
+    <meta content="markdown" property="article:tag">
+    
+
+
+    <script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "마크다운 작성법",
+"datePublished": "2019-12-03T00:00:00+09:00",
+
+"description": "
+마크다운은 간단히 문서를 작성할 때 아주 편리한 도구입니다. 사용법을 익히면 쉽고 빠르게 구조를 갖춘 문서를 만들 수 있습니다. 마크다운의 간단한 문법들을 정리해 보았습니다.
+
+",
+
+"url": "http://localhost:4000/computer/science/2019/12/03/markdown.html"}</script>
+
+
+
+<link rel="author" href="cato"/>
+
+    <!-- End SEO stuff -->
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link href="/assets/css/syntax.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Cato's Coding Blog" />
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>마크다운 작성법 | Cato’s Coding Blog</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="마크다운 작성법" />
+<meta name="author" content="cato" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="마크다운은 간단히 문서를 작성할 때 아주 편리한 도구입니다. 사용법을 익히면 쉽고 빠르게 구조를 갖춘 문서를 만들 수 있습니다. 마크다운의 간단한 문법들을 정리해 보았습니다." />
+<meta property="og:description" content="마크다운은 간단히 문서를 작성할 때 아주 편리한 도구입니다. 사용법을 익히면 쉽고 빠르게 구조를 갖춘 문서를 만들 수 있습니다. 마크다운의 간단한 문법들을 정리해 보았습니다." />
+<link rel="canonical" href="http://localhost:4000/computer/science/2019/12/03/markdown.html" />
+<meta property="og:url" content="http://localhost:4000/computer/science/2019/12/03/markdown.html" />
+<meta property="og:site_name" content="Cato’s Coding Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-03T00:00:00+09:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/computer/science/2019/12/03/markdown.html"},"@type":"BlogPosting","author":{"@type":"Person","name":"cato"},"url":"http://localhost:4000/computer/science/2019/12/03/markdown.html","headline":"마크다운 작성법","dateModified":"2019-12-03T00:00:00+09:00","datePublished":"2019-12-03T00:00:00+09:00","description":"마크다운은 간단히 문서를 작성할 때 아주 편리한 도구입니다. 사용법을 익히면 쉽고 빠르게 구조를 갖춘 문서를 만들 수 있습니다. 마크다운의 간단한 문법들을 정리해 보았습니다.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+  </head>
+  <body>
+    <div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button class="navbar-toggle collapsed" type="button"
+					data-toggle="collapse" data-target="#navbar-collapse-menu">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/"> 
+					<i class="fa fa-code"></i>
+					<span>Cato</span>
+				</a>
+			</div>
+			<div id="navbar-collapse-menu" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					
+						<!-- If has submenues -->
+						
+							<li><a href="/">Home</a></li>
+						
+					
+						<!-- If has submenues -->
+						
+							<li><a href="/about.html">About</a></li>
+						
+					
+						<!-- If has submenues -->
+						
+						<li class="dropdown">
+							<a class="dropdown-toggle"	data-toggle="dropdown" href="#">
+								Categories
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								
+									<li>
+										<a href="/categories.html">
+											computer science
+										</a>
+									</li>
+								
+									<li>
+										<a href="/categories.html">
+											issues
+										</a>
+									</li>
+								
+									<li>
+										<a href="/categories.html">
+											resources
+										</a>
+									</li>
+								
+								</ul>
+							</li>
+						
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="jumbotron clearfix">
+		<h1 class="text-center">마크다운 작성법</h1>
+	</div>
+	
+</div>
+
+
+    <div class="container">
+      <ul>
+<li>마크다운은 간단히 문서를 작성할 때 아주 편리한 도구입니다. 사용법을 익히면 쉽고 빠르게 구조를 갖춘 문서를 만들 수 있습니다. 마크다운의 간단한 문법들을 정리해 보았습니다.</li>
+</ul>
+<h1 id="section">마크다운 작성법</h1>
+<h2 id="section-1">1. 문법</h2>
+<h3 id="headers">1.1 헤더 Headers</h3>
+<p><code>#</code> 를 사용. 1~ 6개까지 가능</p>
+<p>&lt;예시&gt;</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code># H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+</code></pre></div></div>
+<p>&lt;결과&gt;</p>
+<h1 id="h1">H1</h1>
+<h2 id="h2">H2</h2>
+<h3 id="h3">H3</h3>
+<h4 id="h4">H4</h4>
+<h5 id="h5">H5</h5>
+<h6 id="h6">H6</h6>
+<h3 id="block-quote">1.2 Block Quote</h3>
+<p><code>&gt;</code> 블럭 인용문자를 사용. <code>#</code> 와는 달리 제한이 없다. 원하는 만큼 쓸 수 있다.</p>
+<p>&lt;예시&gt;</p>
+<pre><code>&gt; 1
+&gt;&gt; 2
+&gt;&gt;&gt; 3
+&gt;&gt;&gt;&gt; 4
+&gt;&gt;&gt;&gt;&gt; 5
+&gt;&gt;&gt;&gt;&gt;&gt; 6
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 7
+</code></pre>
+<p>&lt;결과&gt;</p>
+<blockquote>
+<p>1</p>
+<blockquote>
+<p>2</p>
+<blockquote>
+<p>3</p>
+<blockquote>
+<p>4</p>
+<blockquote>
+<p>5</p>
+<blockquote>
+<p>6</p>
+<blockquote>
+<p>7</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>인용 부분 안에서도 markdown 문법을 동일하게 사용할 수 있다.</p>
+<p>&lt;예시&gt;</p>
+<pre><code>&gt; # 제목
+&gt; - 내용
+</code></pre>
+<p>&lt;결과&gt;</p>
+<blockquote>
+<h1 id="section-2">제목</h1>
+<ul>
+<li>내용</li>
+</ul>
+</blockquote>
+<h3 id="section-3">1.3 목록</h3>
+<h4 id="section-4">1.3.1 순서있는 목록</h4>
+<p>숫자와 점을 사용한다.</p>
+<p>&lt;예시&gt;</p>
+<pre><code>1. 첫번째
+2. 두번째
+3. 세번째
+</code></pre>
+<p>&lt;결과&gt;</p>
+<ol>
+<li>첫번째</li>
+<li>두번째</li>
+<li>세번째</li>
+</ol>
+<h4 id="section-5">1.3.2 순서없는 목록</h4>
+<p><code>-</code> , <code>*</code>, <code>+</code> 를 사용. 세 가지를 섞어 써도 결과는 같다.</p>
+<p>&lt;예시&gt;</p>
+<pre><code>- 하나
+* 둘
++ 셋
+</code></pre>
+<p>&lt;결과&gt;</p>
+<ul>
+<li>하나</li>
+<li>둘</li>
+<li>셋</li>
+</ul>
+<p>&lt;예시&gt;</p>
+<pre><code>- 하나
+    - 둘
+        - 셋
+            - 넷
+                - 다섯
+</code></pre>
+<p>&lt;결과&gt;  (셋 이후로는 같다.)</p>
+<ul>
+<li>
+<p>하나</p>
+<ul>
+<li>둘
+<ul>
+<li>셋
+<ul>
+<li>넷
+<ul>
+<li>다섯</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>- + * 을 그대로 사용하려면 앞에 \ 을 붙여주면 된다.</p>
+</li>
+</ul>
+<p>&lt;예시&gt;</p>
+<pre><code>\- \+ \* \\
+</code></pre>
+<p>&lt;결과&gt;</p>
+<p>- + * \</p>
+<h3 id="html-">1.4 HTML 태그</h3>
+<p>HTML 태그를 그대로 적용할 수 있다.</p>
+<p>&lt;예시&gt;</p>
+<pre><code>&lt;p&gt;&lt;strong&gt;strong&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;small&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;sup&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sub&gt;sub&lt;/sub&gt;&lt;/p&gt;
+</code></pre>
+<p>&lt;결과&gt;</p>
+<p><strong>strong</strong></p>
+<p><small>small</small></p>
+<p><sup>sup</sup></p>
+<p><sub>sub</sub></p>
+<hr />
+<p>pre 태그는 입력한 그대로 보여준다.</p>
+<p>code 태그는 안에 있는 내용이 코드임을 알려준다.</p>
+<p>&lt;예시&gt;</p>
+<pre><code>&lt;pre&gt; 
+여기에 쓰면 
+	그대로 출력이 됩니다.
+&lt;code&gt;
+window.document.console.log('console log')
+&lt;/code&gt;
+&lt;/pre&gt;
+</code></pre>
+<p>&lt;사용결과&gt;</p>
+<pre> 
+여기에 쓰면 
+	그대로 출력이 됩니다.
+<code>
+window.document.console.log('console log')
+</code>
+</pre>
+<h3 id="section-6">1.5 수평선</h3>
+<p>아래 모두 수평선을 만든다. asterisk 혹은 dash를 3개 이상 연속으로 쓰면 수평선이 만들어진다.</p>
+<p>&lt;예시&gt;</p>
+<pre><code>***
+---
+*****
+---------
+* * * * *
+- - - - - - -
+&lt;hr/&gt;
+</code></pre>
+<p>&lt;결과&gt;</p>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr/>
+<p>=&gt; HTML 태그가 바로 적용이 되기 때문에 <code>hr 태그</code>도 수평선을 만든다.</p>
+<h3 id="section-7">1.6 링크</h3>
+<ul>
+<li>자동연결 - URL 혹은 이메일에 바로 링크를 넣을 수 있다. <code>&lt;링크&gt;</code></li>
+</ul>
+<p>&lt;예시&gt;</p>
+<pre><code>&lt;https://www.google.com&gt;
+&lt;mpcato@naver.com&gt;
+</code></pre>
+<p>&lt;결과&gt;</p>
+<p><a href="https://www.google.com">https://www.google.com</a></p>
+<p><a href="mailto:mpcato@naver.com">mpcato@naver.com</a></p>
+<ul>
+<li>인라인 링크: <code>[p](링크)</code> -&gt; 다른 파일로 이동할 때</li>
+</ul>
+<p>&lt;예시&gt;</p>
+<pre><code>[title](./mbti/index.html)
+[vuejs](./vuejs.md)
+</code></pre>
+<p>&lt;결과&gt;</p>
+<p><a href="./mbti/index.html">title</a></p>
+<p><a href="./vuejs.md">vuejs</a></p>
+<ul>
+<li>인라인링크 -&gt; 동일 파일 내 특정 태그로 이동하고 싶을 때</li>
+</ul>
+<p>&lt;예시&gt;</p>
+<pre><code>[제목](#마크다운-작성법)
+</code></pre>
+<p>&lt;결과&gt;</p>
+<p><a href="#%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EC%9E%91%EC%84%B1%EB%B2%95">제목</a></p>
+<ul>
+<li>인라인링크 -&gt; 다른 파일 내 특정 태그로 이동하고 싶을때</li>
+</ul>
+<p>&lt;예시&gt;</p>
+<pre><code>[vuejs](./vuejs.md#Vue.js)
+</code></pre>
+<p>&lt;결과&gt;</p>
+<p><a href="./javascript.md#javascript">vuejs</a></p>
+<ul>
+<li>참조링크</li>
+</ul>
+<p>&lt;예시&gt;</p>
+<pre><code>[link keyword][id]
+[id]: URL &quot;Optional Title here&quot;
+
+Link: [Google][여기로]
+[여기로]: https://google.com &quot;Go google&quot;
+</code></pre>
+<p>&lt;결과&gt;</p>
+<p>Link: <a href="https://google.com" title="Go google">Google</a></p>
+<blockquote>
+<p>인라인 링크는 대괄호 옆 소괄호 안에 직접 URL 링크를 거는 방식이다.</p>
+<p>반면 참조링크는 마치 링크를 변수화 한 것처럼 대괄호 옆 대괄호 안에 연결할 링크를 변수로써 설정하는 것이다. 변수의 링크를 정의할 땐 사용할 곳의 상하 모두 가능하다.</p>
+</blockquote>
+<h4 id="section-8">참고</h4>
+<ul>
+<li>
+<p><a href="https://gist.github.com/ihoneymon/652be052a0727ad59601">ihoneymon 님의 리포</a></p>
+</li>
+<li>
+<p><a href="https://daringfireball.net/projects/markdown/syntax">John Gruber</a></p>
+</li>
+</ul>
+
+    </div>
+    
+    <footer class="footer">
+	<ul class="footer-links">
+		<li><a href="http://github.com/porciuscato"> <i
+				class="fa fa-inverse fa-github fa-3x"></i></a></li>
+		<li><a href="http://www.linkedin.com/in/jinhong-park-8119a2160"> <i
+                class="fa fa-inverse fa-linkedin-square fa-3x"></i></a></li>
+        <li><a href="https://www.instagram.com/__jin__hong__"> <i
+                class="fa fa-inverse fa-instagram fa-3x"></i></a></li>
+        <li><a href="mailto:mpcato@naver.com"> <i
+                class="fa fa-inverse fa-envelope fa-3x"></i></a></li>        
+	</ul>
+</footer>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
