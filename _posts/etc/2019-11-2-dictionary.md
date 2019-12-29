@@ -4,6 +4,7 @@ published: 2019-12-3
 updated: 2019-12-3
 tags: [dictionary]
 categories: "computer science"
+comments: true
 ---
 
 컴퓨터를 공부하며 모르는 용어를 발견하면 이곳에 정리하였습니다.
