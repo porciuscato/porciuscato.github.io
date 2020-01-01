@@ -1,4 +1,6 @@
 ---
+layout: post
+comments: true
 title: 알아두면 좋은 것들
 published: 2019-12-3
 updated: 2019-12-20

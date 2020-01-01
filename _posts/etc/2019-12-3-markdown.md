@@ -1,4 +1,6 @@
 ---
+layout: post
+comments: true
 title: 마크다운 작성법
 published: 2019-12-3
 updated: 2019-12-3

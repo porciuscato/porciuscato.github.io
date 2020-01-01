@@ -1,12 +1,14 @@
 ---
-title: window에 git bash 설치하기
+layout: post
+comments: true
+title: windows에 git bash 설치하기
 published: 2019-12-13
 updated: 2019-12-13
 tags: [git]
 categories: "computer science"
 ---
 
-window에 git bash를 설치하는 방법입니다.
+windows에 git bash를 설치하는 방법입니다.
 
 # windows에 Git Bash 설치
 

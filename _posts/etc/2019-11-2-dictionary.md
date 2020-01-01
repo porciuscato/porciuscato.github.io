@@ -1,4 +1,6 @@
 ---
+layout: post
+comments: true
 title: IT 용어 정리
 published: 2019-12-3
 updated: 2019-12-3
