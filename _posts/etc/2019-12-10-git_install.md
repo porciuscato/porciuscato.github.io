@@ -1,5 +1,4 @@
 ---
-layout: post
 comments: true
 title: windows에 git bash 설치하기
 published: 2019-12-13
@@ -16,25 +15,25 @@ windows에서 Git을 사용하기 위해선 Git bash를 설치해야 합니다.
 
 다음의 [링크](https://git-scm.com/)로 들어가면 아래와 같은 창이 뜹니다.
 
-<center><img src="/assets/images/git_install/git_scm.jpg" width="70%"></center>
+<center><img src="/assets/images/git_install/git_scm.jpg" width="60%"></center>
 
 빨간색 원 부분을 클릭하고 기다리면 파일이 자동으로 설치됩니다.
 
 만약 자동으로 설치가 안 된다면 하단의 빨간색 원 부분을 클릭하면 됩니다.
 
-<center><img src="/assets/images/git_install/git_scm_install.jpg" width="70%"></center>
+<center><img src="/assets/images/git_install/git_scm_install.jpg" width="60%"></center>
 
 파일을 실행하고 Next를 누릅니다.
 
 `Select Component` 에서 컴포넌트들을 선택하는 단계가 뜹니다.
 
-<center><img src="/assets/images/git_install/git_component_select.jpg"></center>
+<center><img src="/assets/images/git_install/git_component_select.jpg" width="60%"></center>
 
 아래와 같이 선택하고 Next를 클릭합니다.
 
 에디터를 선택하는 창이 나오는데 Vim을 선택합니다.
 
-<center><img src="/assets/images/git_install/git_editor_select.jpg"></center>
+<center><img src="/assets/images/git_install/git_editor_select.jpg" width="60%"></center>
 
 다음 창에서는 가운데를 선택합니다. 가운데를 선택하게 되면 windows prompt창에서도 git을 실행할 수 있게 됩니다.
 
