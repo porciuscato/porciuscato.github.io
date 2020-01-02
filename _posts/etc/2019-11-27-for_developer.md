@@ -4,7 +4,7 @@ title: 알아두면 좋은 것들
 published: 2019-12-3
 updated: 2019-12-20
 tags: [news, economy, lecture]
-categories: "resources"
+category: resources
 ---
 개발자로서 공부하며 도움이 될만한 사이트, 글들을 모았습니다.
 

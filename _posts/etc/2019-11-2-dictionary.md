@@ -4,7 +4,7 @@ title: IT 용어 정리
 published: 2019-12-3
 updated: 2019-12-3
 tags: [dictionary]
-categories: "computer science"
+category: computer science
 ---
 
 컴퓨터를 공부하며 모르는 용어를 발견하면 이곳에 정리하였습니다.

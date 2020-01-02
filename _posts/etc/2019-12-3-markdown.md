@@ -4,7 +4,7 @@ title: 마크다운 작성법
 published: 2019-12-3
 updated: 2019-12-3
 tags: [markdown]
-categories: "computer science"
+category: computer science
 ---
 - 마크다운은 간단히 문서를 작성할 때 아주 편리한 도구입니다. 사용법을 익히면 쉽고 빠르게 구조를 갖춘 문서를 만들 수 있습니다. 마크다운의 간단한 문법들을 정리해 보았습니다.
 
