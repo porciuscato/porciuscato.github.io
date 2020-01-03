@@ -2,11 +2,7 @@ title: Cato's Coding Blog
 subtitle: Cato
 
 collections:
-  computer science:
-    output: true
-  issue:
-    output: true
-  resources:
+  class:
     output: true
 
 defaults:
