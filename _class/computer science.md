@@ -1,4 +1,4 @@
 ---
+layout: class
 title: computer science
 ---
-computer science

@@ -1,4 +1,4 @@
 ---
 title: resources
+layout: class
 ---
-resource

@@ -5,6 +5,7 @@ published: 2019-12-3
 updated: 2019-12-20
 tags: [news, economy, lecture]
 category: resources
+class: resources
 ---
 개발자로서 공부하며 도움이 될만한 사이트, 글들을 모았습니다.
 
