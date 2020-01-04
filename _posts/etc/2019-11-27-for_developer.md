@@ -3,7 +3,7 @@ comments: true
 title: 알아두면 좋은 것들
 published: false
 updated: 2019-12-20
-tags: [news, economy, lecture]
+tags: [news, economy, lecture, compilation]
 categories: [resources]
 ---
 개발자로서 공부하며 도움이 될만한 사이트, 글들을 모았습니다.
@@ -40,7 +40,7 @@ published: 2019-12-3
 
 ### 동주쌤 추천강의
 
-who is 동주쌤? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
+who is 강동주? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
 
 - [Learn fundamental software engineering skills](https://www.edx.org/professional-certificate/ucberkeleyx-agile-development-using-ruby-on-rails)
   - 소프트웨어 공학 수업
@@ -135,7 +135,7 @@ who is 동주쌤? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
 - [Chocolatey](https://chocolatey.org/)
   - windows package manager
 - [Visual Studio Code](https://code.visualstudio.com/)
-  - 정말 좋은 IDE
+  - 유용한 IDE
 
 
 
