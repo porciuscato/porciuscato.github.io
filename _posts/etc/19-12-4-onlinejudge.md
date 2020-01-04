@@ -6,6 +6,7 @@ updated: 2020-1-4
 tags: [online judge, compilation]
 categories: [computer science]
 ---
+온라인 저지 사이트를 모았습니다.
 
 - [프로그래머스](https://programmers.co.kr/)
 

@@ -7,6 +7,8 @@ tags: [compilation]
 categories: [resources]
 ---
 
+개발하며 유용하게 사용할 수 있는 프로그램들과 툴들을 모았습니다.
+
 ## 유용한 프로그램
 
 - [Typora](https://typora.io/)
