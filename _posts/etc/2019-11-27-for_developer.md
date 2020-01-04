@@ -1,14 +1,14 @@
 ---
 comments: true
 title: 알아두면 좋은 것들
-published: 2019-12-3
+published: false
 updated: 2019-12-20
 tags: [news, economy, lecture]
 categories: [resources]
 ---
 개발자로서 공부하며 도움이 될만한 사이트, 글들을 모았습니다.
 
-
+published: 2019-12-3
 
 `Real Artists ship` ----> `Real Developer deploy`
 
@@ -167,9 +167,7 @@ who is 동주쌤? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
 - [Git Lab](https://about.gitlab.com/)
 - [Bit Bucket](https://bitbucket.org/)
 
-
-
-
+### 기타 참고 사이트
 
 - [Github Guides](https://guides.github.com/)
 
@@ -204,11 +202,13 @@ who is 동주쌤? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
 
 ### IT 뉴스
 
+- [Tech Crunch](https://techcrunch.com/)
+  - 미국 IT 비즈니스 트렌드
+
 - [IT World](https://www.itworld.co.kr/)
 - [디지털 타임스](http://www.dt.co.kr/)
 - [EE Times](https://www.eetimes.com/)
 - [ZD Net Korea](http://www.zdnet.co.kr/)
-- [Tech Crunch](https://techcrunch.com/)
 - [인공지능 신문](http://www.aitimes.kr/)
 - [전자신문](http://www.etnews.com/)
 - [IT NEWS](http://www.itnews.or.kr/)
@@ -224,7 +224,7 @@ who is 동주쌤? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
   - 상장된 기업 정보를 볼 수 있음
 
 - [워크넷](https://www.work.go.kr)
-  - [4차 산업혁명 채용관](https://www.work.go.kr/empInfo/indRev/indRevMain.do)
+  - 워크넷에서 [4차 산업혁명 채용관](https://www.work.go.kr/empInfo/indRev/indRevMain.do)에 들어가면 관련 채용 정보를 확인할 수 있음
 - [CATCH](https://www.catch.co.kr)
   - 우수 강소기업 검색
   - 테마기업별 검색이 가능
@@ -832,49 +832,25 @@ commit 시 'merge conflic' 메시지를 써주는게 관례
 
 
 
-https://ppss.kr/archives/63881?fbclid=IwAR2b4UEWdx8GdphQ2UAmW_GtunpfNkduPsDPAlsvsjtFhYR8ahU-l8-xxWc
+[프로그래머의 경력을 말아먹는 12가지 방법](https://ppss.kr/archives/63881?fbclid=IwAR2b4UEWdx8GdphQ2UAmW_GtunpfNkduPsDPAlsvsjtFhYR8ahU-l8-xxWc)
 
+[자바의 reflection](https://www.charlezz.com/?p=756&fbclid=IwAR1PPsTrMxRE1IB4Ae3R3mqQTgqb44QIA0IziiaTWNfZU-syXtpsopMUM-s)
 
+[초보자를 위한 vim 입문서](https://www.joinc.co.kr/w/Site/Vim/Documents/UsedVim?fbclid=IwAR3NtPnlEICkAXY64o3OJW2h-NNThXioll-k73UpYziFs0KhdCMPoyY9KaI#AEN18)
 
-https://www.charlezz.com/?p=756&fbclid=IwAR1PPsTrMxRE1IB4Ae3R3mqQTgqb44QIA0IziiaTWNfZU-syXtpsopMUM-s
+[웹팩 핸드북](https://joshua1988.github.io/webpack-guide/)
 
+[앱의 프론트엔드 성능을 향상시키는 방법 - 5가지 코딩 팁](https://junwoo45.github.io/2019-10-05-frontend-performance/?fbclid=IwAR0LH9973yDT3cM5vdA8jQlFcIQdgwVJCperlHGbMyFzcPFnKU5mnqDn6zo)
 
+[HTML Canvas API를 이용한 짤 생성](https://wormwlrm.github.io/2019/10/13/Kwakcheolyong-Image-Creator-Development-Story.html?fbclid=IwAR3icPwRoELNW6VexQTAR5D4BQe0mzLjbNXyI4hF4D0uz-fqLSeegPYX6iE)
 
-https://www.joinc.co.kr/w/Site/Vim/Documents/UsedVim?fbclid=IwAR3NtPnlEICkAXY64o3OJW2h-NNThXioll-k73UpYziFs0KhdCMPoyY9KaI#AEN18
+[Vue Component 개념을 익히고 만들어보자!!](https://kdydesign.github.io/2019/04/27/vue-component/)
 
+[javascript loupe](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
 
+[자바스크립트 개발자라면 알아야 할 33가지 개념 #1 콜스택 (번역)](https://velog.io/@jakeseo_me/2019-03-15-2303-작성됨-rmjta5a3xh)
 
-https://joshua1988.github.io/webpack-guide/
-
-
-
-
-
-https://junwoo45.github.io/2019-10-05-frontend-performance/?fbclid=IwAR0LH9973yDT3cM5vdA8jQlFcIQdgwVJCperlHGbMyFzcPFnKU5mnqDn6zo
-
-
-
-
-
-https://wormwlrm.github.io/2019/10/13/Kwakcheolyong-Image-Creator-Development-Story.html?fbclid=IwAR3icPwRoELNW6VexQTAR5D4BQe0mzLjbNXyI4hF4D0uz-fqLSeegPYX6iE
-
-
-
-
-
-https://kdydesign.github.io/2019/04/27/vue-component/
-
-
-
-http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
-
-
-
-[https://velog.io/@jakeseo_me/2019-03-15-2303-%EC%9E%91%EC%84%B1%EB%90%A8-rmjta5a3xh](https://velog.io/@jakeseo_me/2019-03-15-2303-작성됨-rmjta5a3xh)
-
-
-
-https://www.notion.so/ghleokim/Deploy-Heroku-w-Django-36608fe334944a6e9d901bea1649762f
+[django의 heroku 배포](https://www.notion.so/ghleokim/Deploy-Heroku-w-Django-36608fe334944a6e9d901bea1649762f)
 
 
 
@@ -884,19 +860,20 @@ https://www.notion.so/ghleokim/Deploy-Heroku-w-Django-36608fe334944a6e9d901bea16
 
 
 
-https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien
+[isometric contributions](https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien)
 
+?
 
+[sourcegraph](https://about.sourcegraph.com/)
 
-https://about.sourcegraph.com/
+?
 
+[octotree](https://www.octotree.io/)
 
+?
 
-https://www.octotree.io/
+[Top 24 Web Developer Portfolios to Get Inspirations(2019)](https://www.mockplus.com/blog/post/web-developer-portfolio)
 
-
-
-https://www.mockplus.com/blog/post/web-developer-portfolio
 
 
 
@@ -1011,7 +988,9 @@ $ pip install django-cors-headers
 
 
 
-https://gist.github.com/edu-john/43f10b5a2258728cece3c83893b38587
+[giphy search engine](https://gist.github.com/edu-john/43f10b5a2258728cece3c83893b38587)
+
+
 
 
 
