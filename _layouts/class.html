@@ -6,7 +6,7 @@ layout: default
 {{ content }}
 
 <ul>
-    {% assign filtered_posts = site.posts | where: 'category', page.title %}
+    {% assign filtered_posts = site.posts | where: 'categories', page.title %}
     {% for post in filtered_posts %}
         <li>
             <a href="{{ post.url }}">{{ post.title }}</a>

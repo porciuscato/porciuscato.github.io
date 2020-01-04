@@ -6,7 +6,7 @@ title: Categories
 {% for item in site.data.categories %}
     <li>
         <h2>{{ item.name | capitalize }}</h2>
-        {% assign categories_posts = site.posts | where: 'category', item.name %}
+        {% assign categories_posts = site.posts | where: 'categories', item.name %}
         <ul>
             {% for post in categories_posts %}
                 <li><a href="{{ post.url }}">{{ post.title }}</a></li>

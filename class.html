@@ -5,8 +5,6 @@ layout: default
 
 {{ content }}
 
-
-
 <ul>
     {% assign filtered_posts = site.posts | where: 'category', page.category %}
     {% for post in filtered_posts %}

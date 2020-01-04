@@ -11,3 +11,5 @@
       link: /categories.html
     - name: resources
       link: /categories.html
+- name: Tags
+  link: /tags.html
