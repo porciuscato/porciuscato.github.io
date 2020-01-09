@@ -82,7 +82,6 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
-  jekyll-commonmark
   jekyll-commonmark-ghpages
   jekyll-feed
   jekyll-paginate

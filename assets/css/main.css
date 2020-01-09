@@ -171,3 +171,7 @@ h2 {
 p {
 	margin-bottom: 1rem;
 }
+
+table {
+	border: 1px solid;
+}
