@@ -20,7 +20,7 @@ author:
   linkedin: jinhong-park-8119a2160
   instagram: __jin__hong__
 
-paginate: 20
+paginate: 10
 
 plugins:
   - jekyll-feed
