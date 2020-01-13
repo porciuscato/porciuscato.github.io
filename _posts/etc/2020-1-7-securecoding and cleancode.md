@@ -4,7 +4,7 @@ title: Secure coding
 published: false
 updated: 2020-1-7
 tags: [secure]
-categories: [computer science]
+categories: [development]
 ---
 
 secure coding이란 무엇이고 왜 필요한가
