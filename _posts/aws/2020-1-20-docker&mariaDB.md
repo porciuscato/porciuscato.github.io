@@ -1,6 +1,6 @@
 ---
 title: docker 사용 기본 환경설정하기
-published: 2020-1-10
+published: false
 updated: 2020-1-20
 tags: [docker, aws]
 categories: [development]
@@ -18,6 +18,8 @@ docker 사용을 위한 환경설정을 해봅시다.
 
 \+ [AWS의 Docker 설명](https://aws.amazon.com/ko/docker/)
 
+\+ [왜 굳이 도커를 사용해야 하는가?](https://www.44bits.io/ko/post/why-should-i-use-docker-container)
+
 
 
 ## 2. MariaDB
@@ -25,6 +27,8 @@ docker 사용을 위한 환경설정을 해봅시다.
   MariaDB는 MySQL과 동일한 소스 코드를 기반으로 만들어진 RDBMS입니다. 
 
 \+ [MariaDB](https://mariadb.com/kb/ko/mariadb/)
+
+\+ maria DB에 json 파일 넣기
 
 
 

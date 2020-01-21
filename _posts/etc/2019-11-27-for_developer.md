@@ -263,7 +263,13 @@ who is 강동주? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
 - [호주에서 취업하기](https://www.seek.com.au)
   - 호주 취업자 [김용균](https://edykim.com/ko/ )
 
-
+- 디자인 및 색깔에 대한 아이디어를 얻기
+  - 구글링
+    - 2020 trend color
+    - color combination
+    - color hex code
+  - 컬러 조합 찾아보는 법: [링크](https://brunch.co.kr/@ebprux/601)
+  - 그 외 컬러 조합 소개 사이트: [링크](https://digitalsynopsis.com/design/minimal-web-color-palettes-combination-hex-code/)
 
 
 
