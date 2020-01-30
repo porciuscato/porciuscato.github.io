@@ -30,6 +30,8 @@ docker 사용을 위한 환경설정을 해봅시다.
 
 \+ maria DB에 json 파일 넣기
 
+\+ [MariaDB](https://downloads.mariadb.org/mariadb/) 설치 사이트
+
 
 
 ## 3. Docker + MariaDB
@@ -43,7 +45,6 @@ docker 사용을 위한 환경설정을 해봅시다.
   ```bash
   docker -v
   ```
-
 
 2) 가상화에 필요한 Hyper-V도 함께 설치합니다.
 
