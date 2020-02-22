@@ -136,6 +136,10 @@ who is 강동주? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
   - windows package manager
 - [Visual Studio Code](https://code.visualstudio.com/)
   - 유용한 IDE
+- [workbench](https://www.mysql.com/products/workbench/)
+  - MySQL 관리 프로그램
+- [git-fork](https://git-fork.com/)
+  - git 관리 프로그램
 
 
 
@@ -147,6 +151,8 @@ who is 강동주? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
 
 - [Trello](https://trello.com/)
   - 일정관리 협업 툴
+- Notion
+  - 일정관리, 협업, 필기 앱
 
 ### 디자인
 
