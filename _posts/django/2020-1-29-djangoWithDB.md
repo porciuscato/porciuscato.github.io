@@ -1,7 +1,7 @@
 ---
 comments: true
 title: django와 외부 database 연동하기(mariaDB)
-published: false
+published: 2020-1-29
 updated: 2020-1-29
 tags: [python, django, backend, mariaDB, mysql, json, dump, load]
 categories: [development]
