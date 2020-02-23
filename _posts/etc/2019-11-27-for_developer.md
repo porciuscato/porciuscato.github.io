@@ -140,8 +140,11 @@ who is 강동주? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
   - MySQL 관리 프로그램
 - [git-fork](https://git-fork.com/)
   - git 관리 프로그램
+- [Postman](https://www.postman.com/)
+  - 네트워크 요청 테스트 프로그램
 
-
+- [adobe XD](https://www.adobe.com/kr/products/xd.html)
+  - wireframe 작성 도구
 
 
 
