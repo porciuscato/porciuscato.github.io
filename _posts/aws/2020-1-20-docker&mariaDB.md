@@ -2,7 +2,7 @@
 title: docker 사용 기본 환경설정하기
 published: false
 updated: 2020-1-20
-tags: [docker, aws]
+tags: [docker, aws, mariaDB]
 categories: [development]
 ---
 
