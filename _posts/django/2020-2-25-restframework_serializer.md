@@ -123,7 +123,11 @@ class SnippetSerializer(serializers.Serializer):
 
 윗 부분에서 클래스의 필드들을 정의했습니다. 메소드들은 인스턴스를 생성하고 수정하여 객체를 반환합니다.
 
-serializer 클래스는 django의 form 클래스와 유사합니다. form처럼 required, max_length, default 등 validation flags을 가지고 있습니다.
+serializer 클래스는 django의 form 클래스와 유사합니다. form처럼 required, max_length, default 등 validation flags을 가지고 있습니다. 
+
+field flags는 특정 환경에서 어떻게 보여져야하는지 컨트롤할 수도 있습니다. 위에 `{'base_template': 'textarea.html'}`은 django form에서 `widget=widget.Textarea`와 같습니다. 
+
+
 
 
 
