@@ -1,13 +1,13 @@
 ---
 comments: true
-title: javascript
-published: false
+title: javascript 공부 하기 전 준비
+published: 2020-2-26
 updated: 2020-2-26
 tags: [javascript]
 categories: [development]
 ---
 
-Javascript의 기초에 대해 공부한 내용을 적었습니다.
+Javascript 시작 전 알아두면 좋을 것들
 
 
 

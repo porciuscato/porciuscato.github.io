@@ -62,6 +62,293 @@ bytes
 "Charlse is 25 years old"
 ```
 
+- 배열을 foramatting 할 수도 있다.
+
+```python
+>>> arr = [1,2,3,4,5,6]
+>>> 'test {0[0]} and {0[1]}'.format(arr)
+'test 1 and 2'
+```
+
+=> format specifiers는 파이썬 구문을 사용하는 데이터구조의 거의 모든 속성과 아이템에 접근할 수 있다. 이를 '*compound field names*'라 부른다. 리스트, 딕셔너리, 모듈, 클래스 등도 마찬가지로 사용 가능하다.
+
+#### format specifier
+
+- 소수점이 길 경우 원하는 만큼 자를 수 있다
+
+```python
+>>> a = 12345789,123456789
+>>> '{0:.5f}'.format(a)
+'123456789.12346'
+```
+
+- `0:.5f` 
+  - 맨 앞의 0은 변수의 순서를 의미한다.
+  - `:` 으로 숫자의 formatting을 지정할 수 있다. `.` 뒤에 오는 수는 소수점의 자릿수를 의미한다. 그 이하는 반올림한다.
+
+
+
+### 내장함수
+
+
+
+
+
+ 'capitalize()' - 첫 글자만 대문자, 나머지는 소문자로. return, no-d
+ 'casefold' 
+ 'center(width, fillchar='')', 전체 문자열의 크기에서 가운데 정렬. width는 숫자. 전체 문자열 길이. fillchar는 빈 칸을 채울 특정 문자. return, no-d
+ 'count(str)', - 특정 문자 혹은 문자열이 해당하는 문자열에 몇 개나 있는지 return, no-d
+ 'encode(encoding, erros)' - return bytes, no-d
+ 'endswith(str)' - 문자열이 특정 문자열이나 문자로 끝나면 True를 반환. Tuple도 올 수 있음. 다중 옵션 가능 no-d
+ 'expandtabs',
+ 'find(str)', - 특정 문자 혹은 문자열이 처음으로 등장하는 곳의 index를 반환. 없으면 -1 no-d
+ 'format',
+ 'format_map',
+ 'index(str)', - 특정 문자 혹은 문자열이 처음 등장하는 곳의 index를 반환. 없으면 ValueError no-d
+ 'isalnum()', - 알파벳 순서로 되어있는 문자열은 True
+ 'isalpha', - 알파벳으로만 되어있는 문자열이면 True
+ 'isascii', - 아스키 코드로만 되어있으면 True
+ 'isdecimal', - 양의 정수로된 문자열이면 True'
+ 'isdigit', - 0과 1로만 구성된 문자열이면 True
+ 'isidentifier', - 
+ 'islower()', - 소문자로만 구성되어있으면 True
+ 'isnumeric',
+ 'isprintable',
+ 'isspace',
+ 'istitle',
+ 'isupper',
+ 'join',
+ 'ljust',
+ 'lower',
+ 'lstrip',
+ 'maketrans',
+ 'partition',
+ 'replace',
+ 'rfind',
+ 'rindex',
+ 'rjust',
+ 'rpartition',
+ 'rsplit',
+ 'rstrip',
+ 'split',
+ 'splitlines',
+ 'startswith',
+ 'strip',
+ 'swapcase',
+ 'title',
+ 'translate',
+ 'upper',
+ 'zfill'
+
+
+ |
+ |  casefold(self, /)
+ |      Return a version of the string suitable for caseless comparisons.
+ |
+ |  expandtabs(self, /, tabsize=8)
+ |      Return a copy where all tab characters are expanded using spaces.
+ |
+ |      If tabsize is not given, a tab size of 8 characters is assumed.
+ |
+ |
+ |  format_map(...)
+ |      S.format_map(mapping) -> str
+ |
+ |      Return a formatted version of S, using substitutions from mapping.
+ |      The substitutions are identified by braces ('{' and '}').
+ |
+ |  isidentifier(self, /)
+ |      Return True if the string is a valid Python identifier, False otherwise.
+ |
+ |      Use keyword.iskeyword() to test for reserved identifiers such as "def" and
+ |      "class".
+ |
+ |  islower(self, /)
+ |      Return True if the string is a lowercase string, False otherwise.
+ |
+ |      A string is lowercase if all cased characters in the string are lowercase and
+ |      there is at least one cased character in the string.
+ |
+ |  isnumeric(self, /)
+ |      Return True if the string is a numeric string, False otherwise.
+ |
+ |      A string is numeric if all characters in the string are numeric and there is at
+ |      least one character in the string.
+ |
+ |  isprintable(self, /)
+ |      Return True if the string is printable, False otherwise.
+ |
+ |      A string is printable if all of its characters are considered printable in
+ |      repr() or if it is empty.
+ |
+ |  isspace(self, /)
+ |      Return True if the string is a whitespace string, False otherwise.
+ |
+ |      A string is whitespace if all characters in the string are whitespace and there
+ |      is at least one character in the string.
+ |
+ |  istitle(self, /)
+ |      Return True if the string is a title-cased string, False otherwise.
+ |
+ |      In a title-cased string, upper- and title-case characters may only
+ |      follow uncased characters and lowercase characters only cased ones.
+ |
+ |  isupper(self, /)
+ |      Return True if the string is an uppercase string, False otherwise.
+ |
+ |      A string is uppercase if all cased characters in the string are uppercase and
+ |      there is at least one cased character in the string.
+ |
+ |  join(self, iterable, /)
+ |      Concatenate any number of strings.
+ |
+ |      The string whose method is called is inserted in between each given string.
+ |      The result is returned as a new string.
+ |
+ |      Example: '.'.join(['ab', 'pq', 'rs']) -> 'ab.pq.rs'
+ |
+ |  ljust(self, width, fillchar=' ', /)
+ |      Return a left-justified string of length width.
+ |
+ |      Padding is done using the specified fill character (default is a space).
+ |
+ |  lower(self, /)
+ |      Return a copy of the string converted to lowercase.
+ |
+ |  lstrip(self, chars=None, /)
+ |      Return a copy of the string with leading whitespace removed.
+ |
+ |      If chars is given and not None, remove characters in chars instead.
+ |
+ |  partition(self, sep, /)
+ |      Partition the string into three parts using the given separator.
+ |
+ |      This will search for the separator in the string.  If the separator is found,
+ |      returns a 3-tuple containing the part before the separator, the separator
+ |      itself, and the part after it.
+ |
+ |      If the separator is not found, returns a 3-tuple containing the original string
+ |      and two empty strings.
+ |
+ |  replace(self, old, new, count=-1, /)
+ |      Return a copy with all occurrences of substring old replaced by new.
+ |
+ |        count
+ |          Maximum number of occurrences to replace.
+ |          -1 (the default value) means replace all occurrences.
+ |
+ |      If the optional argument count is given, only the first count occurrences are
+ |      replaced.
+ |
+ |  rfind(...)
+ |      S.rfind(sub[, start[, end]]) -> int
+ |
+ |      Return the highest index in S where substring sub is found,
+ |      such that sub is contained within S[start:end].  Optional
+ |      arguments start and end are interpreted as in slice notation.
+ |
+ |      Return -1 on failure.
+ |
+ |  rindex(...)
+ |      S.rindex(sub[, start[, end]]) -> int
+ |
+ |      Return the highest index in S where substring sub is found,
+ |      such that sub is contained within S[start:end].  Optional
+ |      arguments start and end are interpreted as in slice notation.
+ |
+ |      Raises ValueError when the substring is not found.
+ |
+ |  rjust(self, width, fillchar=' ', /)
+ |      Return a right-justified string of length width.
+ |
+ |      Padding is done using the specified fill character (default is a space).
+ |
+ |  rpartition(self, sep, /)
+ |      Partition the string into three parts using the given separator.
+ |
+ |      This will search for the separator in the string, starting at the end. If
+ |      the separator is found, returns a 3-tuple containing the part before the
+ |      separator, the separator itself, and the part after it.
+ |
+ |      If the separator is not found, returns a 3-tuple containing two empty strings
+ |      and the original string.
+ |
+ |  rsplit(self, /, sep=None, maxsplit=-1)
+ |      Return a list of the words in the string, using sep as the delimiter string.
+ |
+ |        sep
+ |          The delimiter according which to split the string.
+ |          None (the default value) means split according to any whitespace,
+ |          and discard empty strings from the result.
+ |        maxsplit
+ |          Maximum number of splits to do.
+ |          -1 (the default value) means no limit.
+ |
+ |      Splits are done starting at the end of the string and working to the front.
+ |
+ |  rstrip(self, chars=None, /)
+ |      Return a copy of the string with trailing whitespace removed.
+ |
+ |      If chars is given and not None, remove characters in chars instead.
+ |
+ |  split(self, /, sep=None, maxsplit=-1)
+ |      Return a list of the words in the string, using sep as the delimiter string.
+ |
+ |      sep
+ |        The delimiter according which to split the string.
+ |        None (the default value) means split according to any whitespace,
+ |        and discard empty strings from the result.
+ |      maxsplit
+ |        Maximum number of splits to do.
+ |        -1 (the default value) means no limit.
+ |
+ |  splitlines(self, /, keepends=False)
+ |      Return a list of the lines in the string, breaking at line boundaries.
+ |
+ |      Line breaks are not included in the resulting list unless keepends is given and
+ |      true.
+ |
+ |  startswith(...)
+ |      S.startswith(prefix[, start[, end]]) -> bool
+ |
+ |      Return True if S starts with the specified prefix, False otherwise.
+ |      With optional start, test S beginning at that position.
+ |      With optional end, stop comparing S at that position.
+ |      prefix can also be a tuple of strings to try.
+ |
+ |  strip(self, chars=None, /)
+ |      Return a copy of the string with leading and trailing whitespace remove.
+ |
+ |      If chars is given and not None, remove characters in chars instead.
+ |
+ |  swapcase(self, /)
+ |      Convert uppercase characters to lowercase and lowercase characters to uppercase.
+ |
+ |  title(self, /)
+ |      Return a version of the string where each word is titlecased.
+ |
+ |      More specifically, words start with uppercased characters and all remaining
+ |      cased characters have lower case.
+ |
+ |  translate(self, table, /)
+ |      Replace each character in the string using the given translation table.
+ |
+ |        table
+ |          Translation table, which must be a mapping of Unicode ordinals to
+ |          Unicode ordinals, strings, or None.
+ |
+ |      The table must implement lookup/indexing via __getitem__, for instance a
+ |      dictionary or list.  If this operation raises LookupError, the character is
+ |      left untouched.  Characters mapped to None are deleted.
+ |
+ |  upper(self, /)
+ |      Return a copy of the string converted to uppercase.
+ |
+ |  zfill(self, width, /)
+ |      Pad a numeric string with zeros on the left, to fill a field of the given width.
+ |
+ |      The string is never truncated.
+
 
 
 
