@@ -142,9 +142,10 @@ who is 강동주? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
   - git 관리 프로그램
 - [Postman](https://www.postman.com/)
   - 네트워크 요청 테스트 프로그램
-
 - [adobe XD](https://www.adobe.com/kr/products/xd.html)
   - wireframe 작성 도구
+- [Gantt Chart](http://auiproject.com/prj/project.html?lan=kr)
+  - 프로젝트 일정 관리를 위해 사용하면 좋은 간트 차트 무료 툴
 
 
 
