@@ -1,13 +1,13 @@
 ---
 comments: true
-title: javascript의 데이터 객체와 래퍼 클래스, Array, Object
-published: false
+title: javascript의 데이터 객체와 래퍼 클래스, Array, Object, JSON
+published: 2020-2-27
 updated: 2020-2-27
-tags: [javascript, wrapper, array]
+tags: [javascript, wrapper, array, json]
 categories: [development]
 ---
 
-Javascript 데이터 객체와 래퍼 클래스, Array, Object에 대해 알아보자
+Javascript의 범주 중 데이터에 대해 알아보자. 데이터 범주 중 데이터 객체와 래퍼 클래스, Array, Object, JSON에 대해 알아보자
 
 
 
@@ -45,6 +45,7 @@ var x = "Hello";
   - 객체에 이름을 부여하듯, 이 객체를 참조할 변수가 필요하다. 
   - 물론 내부적으로 참조 변수도 주소를 가지고 있겠지만, 개념적으로는 객체에 대한  `이름` 이다.
 - 자바스크립트는 모든 데이터가 박싱이 된다. 그리고 모든 데이터를 참조하는 형태로서 모든 변수는 참조변수다.
+- 자바스크립트는 문자와 문자열을 구분하지 않는다. 모두 문자열이기에 `''`, `""` 둘 다 같은 의미다.
 
 \* 자바스크립트는 기본형식(int, float 등등)이라는 것이 없다. 다 `wrapper 형 클래스`다.
 
@@ -188,9 +189,96 @@ exam.eng = 70
 exam.math = 80
 ///
 exam["kor"] = 40 // 이런 식으로도 사용할 수 있다.
+
+// 여러 줄을 표현할 경우 ` \`을 사용한다.
+var n = '{ \
+            "kor": 12, \
+            "eng": 30 \
+        }'
 ```
 
 이를 확장이 가능한 Object라 하여 `Expand Object`라 한다.
+
+
+
+## JSON
+
+JS는 다른 언어처럼 공간을 할당한 뒤 그 공간에 값을 할당하는 것이 아니다. 객체를 먼저 생성한 뒤 변수는 참조할 뿐이다. JS의 모든 변수는 참조 변수다. 
+
+그래서 정수 하나를 사용하려해도 다음과 같이 객체를 먼저 생성해야 한다. 이는 JS의 다른 데이터 타입도 마찬가지다.
+
+```javascript
+// JavaScript Object
+var n = new Boolean(true)
+var n = new Number(3)
+var n = new String("hello")
+var n = new Array()
+var n = new Objects()
+```
+
+매번 변수를 선언할 때마다 객체를 생성해야 한다면 여간 불편한 일이 아닐 수 없다.  그래서 JS가 다루는 오브젝트를 쉽게 표현하기 위해 새로운 표기법이 제시되는데 그것이 `JSON(JavaScript Object Notation)`이다. 
+
+JSON 형식으로 표현하면 위의 코드는 아래처럼 변하게 된다.
+
+```javascript
+// JavaScript Object Notation
+var n = true
+var n = 3
+var n = "hello"   // var n = 'hello'와 같다.
+var n = []
+var n = {}
+```
+
+데이터를 전송하는 방식으로서 XML, CSV 등이 있었지만 JSON의 편리함으로 인해 다양한 플랫폼에서도 이를 사용하기 시작했다.
+
+그러나 다른 사이트로서 JSON을 받으면 문자열로 받게 된다. 이를 사용이 가능하도록 Object로 만들어야 한다. 이때 사용 가능한 함수가 `eval()`이다.
+
+### eval
+
+```javascript
+'var x = 30'
+console.log(x)
+// 이는 실행이 되지 않는다. 그런데
+eval('var x = 30')
+console.log(x)
+// 이는 실행이 된다!
+```
+
+eval 함수는 string을 실행시키는 역할이다. 그런데 eval 함수 자체는 undefined를 return 하기에 다른 변수가 참조하도록 만들 수는 없다. 그렇다면 문자열로 받은 JSON을 어떻게 바꿔야 하는가?
+
+```javascript
+var n = '{ \
+            "kor": 12, \
+            "eng": 30 \
+        }'
+eval("var en = " + n)
+console.log(en.kor)
+// 이렇게 하면 작동한다.
+```
+
+하지만 eval 보다는 JSON parser를 이용하는 것이 권장된다. eval 함수는 매번 다른 변수를 추가해줘야하는 번거로움이 있기 때문이다. 그렇기에 JSON Parser를 사용한다.
+
+### JSON Parser
+
+```javascript
+var n = JSON.parse('{ \
+            "kor": 12, \
+            "eng": 30 \
+        }')
+console.log(n.kor)
+// 12가 출력되는 것을 확인할 수 있다.
+```
+
+\+ 한 가지 주의하자. 원래 key는 따옴표 안에 넣을 필요가 없다. {kor: 12, eng: 30}으로 해도 동작은 한다. 그러나 parser를 사용할 땐 반드시 Key를 따옴표 안에 넣어야 한다.
+
+허나 key에 큰 따옴표를 붙이지 않는 것이 관례다. Object를 JSON으로 바꾸기 위해 key에 따옴표를 일일이 붙일 필요가 없다. `JSON.stringify` 를 사용하면 된다.
+
+```javascript
+var data = {id: 2, title: 'bbb'}
+str_data = JSON.stringify(data)
+console.log(str_data)
+// {"id":2,"title":"bbb"} // 바뀐 것을 확인할 수 있다.
+```
 
 
 
