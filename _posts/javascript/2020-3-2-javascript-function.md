@@ -1,8 +1,8 @@
 ---
 comments: true
 title: javascript의 함수와 표현식
-published: false
-updated: 2020-3-1
+published: 2020-3-2
+updated: 2020-3-2
 tags: [javascript]
 categories: [development]
 ---
