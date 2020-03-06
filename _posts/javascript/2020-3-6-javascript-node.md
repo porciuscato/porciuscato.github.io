@@ -1,17 +1,17 @@
 ---
 comments: true
-title: javascript의 노드
+title: javascript에서 엘리먼트 선택 방법
 published: false
 updated: 2020-3-6
 tags: [javascript]
 categories: [development]
 ---
 
-Javascript
+그저 getElement를 쓸 것인가? 선택에 따라 유지보수의 비용이 달라지는 점을 인지하자.
 
 
 
-## 노드 선택 방법 개선하기
+## 엘리먼트 선택 방법 개선하기
 
 아래와 같은 코드는 매번 Id를 입력해줘야 하고, 이를 다시 js에서 일일이 호출해야하는 불편함이 있다.
 
@@ -96,6 +96,33 @@ let txtY = section2.getElementsByClassName("txt-y")[0]
 ```
 
 이때 클래스는 여러 개를 가져오기 때문에 배열을 반환한다. index 설정에 주의하자.
+
+
+
+#### 방법 3. querySelector
+
+`querySelector` 와 `querySelectorAll`을 사용하면 css selector를 사용할 수 있다.
+
+```javascript
+let section3 = document.getElementById("section3")
+...
+let txtY = section3.querySelector(".txt-y")
+...
+```
+
+태그가 name 속성을 가지는 경우도 생각해보자.
+
+```html
+<input name='x' type="text" value="0" dir="rtl"/>
+```
+
+이를 querySelector 로 가져오기 위해서 다음과 같이 쓸 수 있다.
+
+```javascript
+let txtX = section3.querySelector("input[name='x']")
+```
+
+
 
 
 
