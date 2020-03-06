@@ -199,6 +199,55 @@ html로 작성된 문서는 load, 즉 메모리 상에 올라가며 트리 구�
 
 
 
+#### View와 Controller 분리하기
+
+현재 방식은 모든 코드들이 한 페이지에 있기에, 협업의 어려움이 있다. 그러므로 스크립트와 html을 분리하는 방식을 알아보자.
+
+script를 다른 파일에 만든 뒤, head에 script 태그를 추가하자
+
+```html
+<script src="index.js"></script>
+```
+
+그리고 다른 하나를 추가해보자. test.js를 만들어 아래의 내용을 넣어보자.
+
+```javascript
+window.onload = function(){
+    this.alert('안녕하세요')
+}
+```
+
+html의 head는 아래와 같이 고친다.
+
+```html
+<script src="index.js"></script>
+<script src="test.js"></script>
+```
+
+실행을 하면 test.js는 실행이 되는데 index.js는 실행되지 않는다. 어떻게 된 것인가?
+
+이는 `window.onload`가 재할당되었기 때문이다. => `이벤트를 누적`하는 방법을 사용하자!
+
+#### 여러 스크립트 파일을 함께 사용할 때 초기화 함수의 문제
+
+기존에 문제가 되던 표기는 아래와 같다.
+
+```javascript
+window.onload = function(){}
+```
+
+이를 아래와 같이 바꿔준다.
+
+```javascript
+window.addEventListener("load", function() {alert('test1')})
+```
+
+이후 코드가 실행된다.
+
+이벤트를 바인딩할 때는 무조건 `addEventListener`를 사용하자.
+
+
+
 
 
 #### 참고
