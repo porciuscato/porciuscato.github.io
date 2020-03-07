@@ -1,7 +1,7 @@
 ---
 comments: true
 title: javascript에서 엘리먼트 선택 방법
-published: false
+published: 2020-3-6
 updated: 2020-3-6
 tags: [javascript]
 categories: [development]
