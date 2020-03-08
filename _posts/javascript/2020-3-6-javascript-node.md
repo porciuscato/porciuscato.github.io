@@ -1,8 +1,8 @@
 ---
 comments: true
-title: javascript에서 엘리먼트 선택 방법
-published: false
-updated: 2020-3-6
+title: javascript에서 엘리먼트, 노드 다루기
+published: 2020-3-8
+updated: 2020-3-8
 tags: [javascript]
 categories: [development]
 ---
@@ -11,7 +11,7 @@ categories: [development]
 
 
 
-## 엘리먼트 선택 방법 개선하기
+## 엘리먼트 선택 방법
 
 아래와 같은 코드는 매번 Id를 입력해줘야 하고, 이를 다시 js에서 일일이 호출해야하는 불편함이 있다.
 
@@ -143,15 +143,102 @@ DOM에 추가하기 위해선 특정 노드를 선택하고(자식을 가질 수
 <ul class="menu-list"></ul>
 ```
 
+ul 태그에 a 태그를 가진 li 태그를 추가하기 위해 다음과 같이 쓸 수 있다.
 
+#### appendChild
+
+```javascript
+let a = document.createElement('a')
+let li = document.createElement('li')
+let txtnode = document.createTextNode(inputText.value)
+a.appendChild(txtnode)
+li.appendChild(a)
+menuList.appendChild(li)
+```
+
+하지만 이는 appendChild를 세 번이나 호출하기에 좋지 않다. 한 번에 할 수 있는 방법도 있다. 그것은 `innerHTML`을 사용하는 방법이다.
+
+#### innerHTML
+
+```javascript
+menuList.innerHTML += '<li><a href="#">' + inputText.value + '</a></li>'
+```
+
+이 역시도 문제가 있다. 받는 형식이 string이기 때문에 이를 다시 object로 만들어야 한다. 즉 object인 menuList를 string으로 형변환 후, string을 menuList에 붙인다. 그리고 다시 string 전체를 object로 전환한다. 이는 성능 저하로 이어질 수 있기에 좋지 않다. 그러므로 다음과 같은 방법을 사용하자.
+
+#### appendChild + innerHTML
+
+```javascript
+let li = document.createElement('li')
+li.innerHTML = '<a href="#">' + inputText.value + '</a>'
+menuList.appendChild(li)
+```
+
+작은 단위에서 innerHTML을 사용했고, 큰 단위에서는 append를 사용했기에 성능을 높일 수 있는 방식이다.
+
+#### append
+
+append를 통해 텍스트, 노드 모두 삽입이 가능하다.
 
 
 
 ### 삭제
 
-`removeChild`
+삭제는 크게 두 가지 방식이 있다. 부모로부터 자식을 지우는 경우, 혹은 그 태그를 바로 지우는 경우가 그것이다.
+
+#### removeChild
+
+특정 태그의 부모를 찾아가서 지운다.
+
+```javascript
+let sibling = parent.children[0]
+parent.removeChild(sibling)
+```
+
+#### remove
+
+굳이 부모를 찾지 않더라도 바로 지울 수 있다.
+
+```javascript
+let sibling = parent.children[0]
+sibling.remove()
+```
 
 
+
+## 노드 복제하기
+
+#### cloneNode
+
+`cloneNode(false)`를 하게 되면 해당 태그만 가져온다. true를 하면 자식 노드까지 전부 가져온다.
+
+```javascript
+let memuList = querySelector('#menu-list')
+let cloneList = menuList.cloneNode(true)
+```
+
+복제할 게 없을 땐 template 태그를 사용할 수 있다. template의 내용은 화면 상에 보여지지 않는다.
+
+```html
+<template>
+	<tr>
+		<td></td>
+        <td><a href=""></a></td>
+        <td></td>
+    </tr>
+</template>
+```
+
+이 같은 경우가 있을 때 template을 clone하는 방식은 위와는 다르다.
+
+#### importNode
+
+```javascript
+let temp = section.querySelector('template')
+let cloneNode = document.importNode(temp.content, true)
+```
+
+template이 가지고 있는 content를 모두 deeply 하게 가져오겠다는 것을 의미한다.
 
 
 
