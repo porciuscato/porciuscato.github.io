@@ -1,7 +1,7 @@
 ---
 comments: true
 title: javascript에서 엘리먼트 선택 방법
-published: 2020-3-6
+published: false
 updated: 2020-3-6
 tags: [javascript]
 categories: [development]
@@ -121,6 +121,37 @@ let txtY = section3.querySelector(".txt-y")
 ```javascript
 let txtX = section3.querySelector("input[name='x']")
 ```
+
+
+
+## 현재 Document에 노드 추가/삭제 하기
+
+### 추가
+
+노드를 생성해도 DOM에 추가하지 않으면 브라우저 상에 보이지 않는다. 추가는 `append` 혹은 `insert`로 가능하다.
+
+생성 자체는 `createElement` 혹은 `createTextNode`로 가능하다. 이로써 메모리에 load는 됐지만 DOM에는 없는 상태기에 보이지 않는다.
+
+DOM에 추가하기 위해선 특정 노드를 선택하고(자식을 가질 수 있는 노드), `append`, `appendChild`를 사용한다.
+
+```html
+<div>
+    <input type="text" class="input-text">
+    <input type="button" value="추가" class="add-button">
+    <input type="button" value="삭제" class="remove-button">
+</div>
+<ul class="menu-list"></ul>
+```
+
+
+
+
+
+### 삭제
+
+`removeChild`
+
+
 
 
 
