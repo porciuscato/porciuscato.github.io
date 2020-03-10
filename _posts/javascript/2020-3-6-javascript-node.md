@@ -1,13 +1,13 @@
 ---
 comments: true
 title: javascript에서 엘리먼트, 노드 다루기
-published: 2020-3-8
+published: false
 updated: 2020-3-8
 tags: [javascript]
 categories: [development]
 ---
 
-그저 getElement를 쓸 것인가? 선택에 따라 유지보수의 비용이 달라지는 점을 인지하자.
+javascript에서 노드와 엘리먼트를 다뤄보자.
 
 
 
@@ -66,8 +66,8 @@ window.addEventListener("load", function(){
 
 ```javascript
 window.addEventListener("load", function(){
-    let section2 = document.getElementById("section2")
-    let inputs = section2.getElementsByTagName("input")
+    let section = document.getElementById("section")
+    let inputs = section.getElementsByTagName("input")
 
     let textX = inputs[0]
     let textY = inputs[1]
@@ -195,6 +195,8 @@ let sibling = parent.children[0]
 parent.removeChild(sibling)
 ```
 
+> 태그는 html에서 지워지지만 sibling에 대한 참조는 남아있다. 그래서 sibling을 다른 곳에 옮기는 것이 가능하다.
+
 #### remove
 
 굳이 부모를 찾지 않더라도 바로 지울 수 있다.
@@ -213,7 +215,7 @@ sibling.remove()
 `cloneNode(false)`를 하게 되면 해당 태그만 가져온다. true를 하면 자식 노드까지 전부 가져온다.
 
 ```javascript
-let memuList = querySelector('#menu-list')
+let memuList = section.querySelector('#menu-list')
 let cloneList = menuList.cloneNode(true)
 ```
 
@@ -239,6 +241,92 @@ let cloneNode = document.importNode(temp.content, true)
 ```
 
 template이 가지고 있는 content를 모두 deeply 하게 가져오겠다는 것을 의미한다.
+
+
+
+## 노드 삽입과 바꾸기
+
+그 전에 한 노드에 대해 그 노드의 부모와 형제, 자식들을 고르는 메소드들을 살펴보자. 좌측에 있는 메소드는 모든 노드를 선택하기 때문에 text node도 범위 안에 포함된다. 엘리먼트만을 선택하려면 우측의 메소드를 사용하자.
+
+| Node 선택 | Element 선택 |
+| ---- | ---- |
+| parentNode | parentElementNode |
+| firstChild | firstElementChild |
+| lastChild | lastElementChild |
+| previousSibling | previousElementSibling |
+| nextSibling | nextElementSibling |
+
+\+ 만약 선택한 노드가 없다면 null이 return 된다.
+
+특정 노드를 선택하여 특정 위치에 넣기 위해서 사용하는 메소드는 `insertBefore`다.  이는 특정한 두 노드의 위치를 바꾸는 메소드다. 혹은 특정한 노드를 생성한 뒤 해당 노드 앞에 추가할 수도 있다.
+
+```html
+<tbody>
+    <tr>
+        <td>1</td>
+        <td><a href="1">파이썬</a></td>
+        <td>2019-01-25</td>
+        <td>newlec</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><a href="2">자바스크립트</a></td>
+        <td>2019-01-26</td>
+        <td>newlec</td>
+        <td>1</td>
+    </tr>
+</tbody>
+```
+
+두 위치를 바꾸기 위해선
+
+#### insertBefore
+
+```javascript
+let currentNode = tbodyNode.firstElementChild  // 맨 위의 노드를 선택
+let nextNode = currentNode.nextElementSibling  // 선택한 노드의 이전 형제를 선택
+if (nextNode === null){ // 원하는 노드가 없을 경우 null을 반환
+     alert('더 이상 이동할 수 없습니다.')
+ }
+else{
+	tbodyNode.insertBefore(nextNode, currentNode)
+}
+```
+
+이는 다음의 노드를 빼서 현재 노드 앞에 두는 코드다. 이 메소드는 특정 노드의 앞에만 넣을 수 있다. 이보다 더 직관적인 메소드도 있다.
+
+#### insertAdjacentElement
+
+insertBefore가 부모 노드를 선택한 상태에서 두 자식 노드를 바꾸는 메소드였다면, insertAdjacentElement는 부모 노드를 선택할 필요 없이 바꾸는 것이 가능하다. 위의 else 부분을 다음과 같이 바꾸면 된다.
+
+```javascript
+currentNode.insertAdjacentBefore("beforebegin", nextNode)
+```
+
+현재 노드의 앞에 다음 노드를 붙이는 것이다. 괄호 안의 위치는 4가지가 가능하다.
+
+```html
+<!-- beforebegin -->
+<p>
+  <!-- afterbegin -->
+  foo
+  <!-- beforeend -->
+</p>
+<!-- afterend -->
+```
+
+p가 현재 노드다. `beforebegin`과 `afterend`로 p 노드 앞 뒤로 노드 삽입이 가능하다.
+
+
+
+## 다중 노드 선택과 일괄삭제 및 자리바꾸기
+
+input 태그 checkbox 타입에서 체크를 하려면 checked='true' 옵션을 주면 된다. 이때 버튼 하나를 클릭했을 때 
+
+```html
+
+```
 
 
 
