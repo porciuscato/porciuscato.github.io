@@ -1,7 +1,7 @@
 ---
 comments: true
 title: javascript에서 엘리먼트, 노드 다루기
-published: false
+published: 2020-3-8
 updated: 2020-3-8
 tags: [javascript]
 categories: [development]
@@ -322,15 +322,91 @@ p가 현재 노드다. `beforebegin`과 `afterend`로 p 노드 앞 뒤로 노드
 
 ## 다중 노드 선택과 일괄삭제 및 자리바꾸기
 
-input 태그 checkbox 타입에서 체크를 하려면 checked='true' 옵션을 주면 된다. 이때 버튼 하나를 클릭했을 때 
+input 태그 checkbox 타입에서 체크를 하려면 checked='true' 옵션을 주면 된다. 이때 버튼 하나를 클릭했을 때 모든 버튼도 클릭되게 만들고 싶다면 다음과 같이 작성할 수 있다.
+
+이 아래 JS 이해를 돕기 위한 html 예시코드다.
 
 ```html
-
+<tr>
+    <th><input type="checkbox"></th>
+    <td>1</td>
+    <td><a href="1">자바스크립트란</a></td>
+    <td>2020-03-05</td>
+    <td>cato</td>
+    <td>2</td>
+</tr>
 ```
 
+#### 다중 선택
 
+아래는 JS 코드다.
 
+```javascript
+let inputs = tbodyNode.querySelectorAll('input[type="checkbox"]')
+for(let i = 0; i < inputs.length; i++){
+    inputs[i].checked = overallCheckbox.checked
+}
+```
 
+inputs 변수에 맞는 type의 input 태그를 모두 가져와서 저장한다. 그리고 overallCheckbox의 checked 상태로 모두 바꿔주는 것이다.
+
+#### 일괄 삭제
+
+일괄 삭제도 가능하다. 체크가 된 태그들만을 가져와 삭제한다.
+
+```javascript
+let inputs = tbodyNode.querySelectorAll('input[type="checkbox"]:checked')
+for(let i = 0; i < inputs.length; i++)
+    inputs[i].parentElement.remove()
+```
+
+inputs 변수에 적절한 type의 태그를 가져오되 checked 속성을 가진(CSS의 pesudo class) 것들을 저장한다. 이후 이 태그가 포함된 부모노드로 올라가 이 태그를 삭제한다.
+
+#### 자리 바꾸기
+
+`replaceChild` / `replaceWith`
+
+사용법은 다음과 같다.
+
+- replaceChild
+
+  ```javascript
+  parentNode.replaceChild(newChild, oldChild)
+  ```
+
+  두 자식 노드를 바꾸되 oldChild가 newChild로 대체된다. 즉 oldChild는 사라지고 그 자리를 newChild가 대신한다.
+
+- replaceWith
+
+  ```javascript
+  oldNode.replaceWith(newNode)
+  ```
+
+  기존 노드를 새로운 노드로 바꾼다.
+
+두 엘리먼트의 자리를 바꾸는 방법은 다음과 같다. => 한 노드를 클론하여 바꿀 노드의 아래쪽에 붙인다. 그리고 바꿀 노드를 클론했던 노드와 위치를 바꾼다.
+
+코드는 아래와 같다.
+
+```javascript
+switchButton.onclick = function(){
+        let inputs = tbody.querySelectorAll("input[type='checkbox']:checked")
+        if(inputs.length !=2){
+            alert('2개를 선택하세요')
+            return
+        }
+
+        let trs = []
+        for (let i = 0;i < inputs.length; i++)
+            trs.push(inputs[i].parentElement.parentElement)
+        
+        let cloned = trs[0].cloneNode(true)
+        trs[1].replaceWith(cloned)  // html 상 바뀌지만 trs[1] 노드에 대한 참조는 메모리에서 해제되지 않은 상태다.
+        trs[0].replaceWith(trs[1])
+    }
+```
+
+input 태그 중 선택된 2개를 고른 뒤, 두 노드를 바꾸는 로직이다.
 
 
 

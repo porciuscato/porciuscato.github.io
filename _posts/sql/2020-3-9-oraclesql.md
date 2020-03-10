@@ -3,7 +3,7 @@ comments: true
 title: sql 공부
 published: false
 updated: 2020-3-8
-tags: [sql]
+tags: [sql, oracle]
 categories: [development]
 ---
 
@@ -120,6 +120,8 @@ sql developer에 들어가서 왼쪽 사이드바에서 접속 밑의 초록색 
 > 로컬로만의 접속을 false 한다는 뜻이다. 본래는 로컬 접속만 가능하기에 default로 True다. 위 명령어를 sql plus에 입력하자.
 >
 > 이후 다른 컴퓨터에서 접속이 가능하게 하려면 sql developer에서 설정을 바꿔야 한다. 초록색 + 버튼을 클릭하고 세부정보에 들어가 호스트이름으로서 localhost로 되있는 것을 IP 주소로 바꾼다. (이는 cmd 창에서 ipconfig를 입력해 확인할 수 있다.)
+
+
 
 
 
