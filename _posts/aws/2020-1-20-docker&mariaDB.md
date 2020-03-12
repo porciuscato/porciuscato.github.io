@@ -1,10 +1,12 @@
 ---
-title: docker 사용 기본 환경설정하기
-published: false
+title: windows 엔터프라이즈로 docker 사용 기본 환경설정하기
+published: 2020-1-20
 updated: 2020-1-20
 tags: [docker, aws, mariaDB]
 categories: [development]
 ---
+
+docker 사용을 위한 환경설정을 해봅시다.
 
 docker 사용을 위한 환경설정을 해봅시다.
 

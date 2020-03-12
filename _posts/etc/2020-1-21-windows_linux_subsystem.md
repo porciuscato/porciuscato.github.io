@@ -10,9 +10,5 @@ Windows10에서 Linux를 실행하기 위해 Windows 하위 시스템을 설치�
 
 
 
-이전에 Windows에서 Ubuntu 실행을 위해 VM ware 인 virtualbox를 사용했었습니다. 
-
-
-
 [링크](https://docs.microsoft.com/ko-kr/windows/wsl/install-win10)
 
