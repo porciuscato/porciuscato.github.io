@@ -74,3 +74,92 @@ ex) 자동차라면 아반테는 개체, 실제 매장에서 구매한 차는 �
 출력 객체는 out, 입력 객체는 in이다. 이는 자바 환경이 만들어 놓은 객체다. 
 
 그러므로 write함수를 쓰더라도 우리는 out 객체를 사용하여 out.write() 형식으로 출력하는 것이다.
+
+
+
+> ##### 콘솔 입/출력과 문자 코드
+>
+> 키보드 입력에 대해 생각해보자. 키보드의 숫자 2를 누르면 버퍼에 2가 전달될까? 그렇지 않다. 키 코드가 전달된다. 자판 위에 보이는 것은 라벨에 불과하다. 키보드에는 자판마다 식별하기 위한 코드가 있다. 출력할 때도 이 키 코드에 전달된 값을 번역하여 출력한다. -> 이 키 코드가 ASCII다.
+>
+> 아스키에 각국 문자를 표현하기 위해 확장된 형태가 EUC-KR, EUR-JP 등이다. 그러나 이는 같은 코드에서 서로 다른 문자가 나오는 문제가 있다.
+>
+> 그래서 전 세계 모든 문자를 담고 있는 형태가 Unicode다.
+
+
+
+#### 문자를 콘솔창에 출력하기
+
+```java
+System.out.write(3)
+```
+
+이는 out 객체에 3을 담아 버퍼에 전달하는 코드다.
+
+```java
+System.out.flush();
+```
+
+버퍼를 출력하기 위한 명령어다. 그런데 이렇게 한다고 3이 출력되지는 않는다. 
+
+우리가 전달한 3은 integer 3이 아닌 ASCII 3이 전달된 것이기 때문이다. ASCII 표에 따르면 3은 그저 End of Text를 가리키는 기호에 불과하다. 진짜 숫자 3을 출력하려면
+
+```java
+System.out.write(51);
+System.out.flush();
+```
+
+이렇게 해야한다.
+
+그렇다면 ASCII를 모두 알고 있어야 하는가? 그렇지는 않다. `''` single quotation에 값을 넣으면 값에 해당하는 코드로 변환해준다.
+
+```java
+System.out.write('3');
+System.out.flush();
+```
+
+이로써 3을 출력할 수 있게 된다.
+
+---
+
+```java
+System.out.write('A' + 0);
+System.out.write('A' + 1);
+System.out.write('A' + 2);
+System.out.write('A' + 3);
+System.out.flush();
+// ABCD가 출력된다
+```
+
+
+
+## 문자열 출력
+
+위의 방법으로 문자열을 출력하려면 write 함수를 많이 써야하고, flush까지 호출해야 한다.
+
+이런 반복적인 일을 대신해주는 함수가 있다.
+
+- print()
+- println()
+- printf()
+
+System.out은 출력 스트림의 이름인데, 자세하게 말하자면 여러 기능을 제공하는 (write, flush, print 등등) `응용 객체의 이름`이다.
+
+```java
+System.out = new PrintStream(new OutputStream());
+```
+
+`print()` 함수를 통해서 다음처럼 사용할 수 있다.
+
+```java
+System.out.print("hello");
+System.out.print(3.54);
+```
+
+> ####  주석처리
+>
+> \- `// one line`
+>
+> \- `/* multi-line*/`
+
+그러나 위처럼 코드를 작성하면 한 줄로 출력된다.
+
