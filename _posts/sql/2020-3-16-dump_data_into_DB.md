@@ -282,3 +282,74 @@ ADD COLUMN `입력일자` DATETIME DEFAULT NOW();
 
 ## 5. Text into Database
 
+이번에는 도로명 주소에 대한 정보가 담긴 txt 파일을 DB에 넣는다.
+
+<font size=3>[도로명](http://www.juso.go.kr/addrlink/addressBuildDevNew.do?menu=match)</font> 링크에서 파일을 다운 받고 전처리를 해야한다.
+
+우리가 원하는 칼럼의 형식은 다음과 같다.
+
+`도로명코드,도로명,읍면동일련번호,시도명,입력자 ssafy 아이디,입력일자(년월일시분초)`
+
+하지만 실제 데이터는 이와 다르다.
+
+```
+111102005001|세종대로|Sejong-daero|00|서울특별시|Seoul|종로구|Jongno-gu|||2||0||||
+```
+
+고로 이를 우리가 원하는 방식대로 만들어야 한다.
+
+다음과 같이 만든다.
+
+```
+111102005001|세종대로|00|서울특별시 종로구
+```
+
+변환 코드는 다음과 같다.
+
+```python
+ALL_LINES = []
+
+with open("roads.txt", "r", encoding='utf-8-sig') as file:
+    for idx, line in enumerate(file.readlines()):
+        line = line.split('|')
+        result = '|'.join([line[0], line[1], line[3], '{} {}'.format(line[4], line[6])])
+        ALL_LINES.append(result)
+
+str_LINES = '\n'.join(ALL_LINES)
+
+with open("roads_processed.csv", "w", encoding='utf-8-sig') as file:
+    file.writelines(str_LINES)
+```
+
+이에 해당하는 테이블을 만들자.  `PK,도로명코드,도로명,읍면동일련번호,시도명`을 가진 테이블을 만든다. PK는 없어서 추가했다.
+
+```mysql
+CREATE TABLE `mydb`.`addr` (
+  `PK` INT NOT NULL AUTO_INCREMENT,
+  `도로명코드` VARCHAR(200) NULL,
+  `도로명` VARCHAR(200) NULL,
+  `읍면동일련번호` VARCHAR(200) NULL,
+  `시도명` VARCHAR(200) NULL,
+  PRIMARY KEY (`PK`));
+```
+
+만든 파일의 위치를 옮겨 Load data 를 실행한다.
+
+```mysql
+LOAD DATA
+INFILE 'roads_processed.csv' 
+INTO TABLE mydb.addr 
+FIELDS TERMINATED BY '|' 
+LINES TERMINATED BY '\n'
+(`도로명코드`, `도로명`, `읍면동일련번호`, `시도명`)
+SET `PK` = null;
+```
+
+이제 칼럼을 추가하자.
+
+```mysql
+ALTER TABLE mydb.addr 
+ADD COLUMN SSAFY_ID VARCHAR(200) DEFAULT 'mpcato@naver.com',
+ADD COLUMN `입력일자` DATETIME DEFAULT NOW();
+```
+
