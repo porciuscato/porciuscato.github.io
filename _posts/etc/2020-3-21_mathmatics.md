@@ -139,11 +139,13 @@ $$
 | $\iint$                                      | \iint                                      |
 | $\iiint$                                     | \iiint                                     |
 | $\idotsint$                                  | \idotsint                                  |
-| $\sum_{\substack{0<i<m\0<j<n}} P(i, j)$      | \sum_{\substack{0<i<m\0<j<n}} P(i, j)      |
+| $\sum_{\substack{0<i<m\0<j<n}} P(i, j)$      | \sum_{\substack{0<i<m,0<j<n}} P(i, j)      |
 | $\int\limits_a^b$                            | \int\limits_a^b                            |
 
 $$
-\sum_{i=1}^{10} t_i, \int_0^\infty \mathrm{e}^{-x}\,\mathrm{d}x, \sum, \prod, \coprod,\\ \bigoplus,\bigotimes, \bigodot, \bigcup, \bigcap, \biguplus, \bigsqcup, \bigvee, \bigwedge,\\ \int, \oint, \iint, \iiint, \idotsint, \sum_{\substack{0<i<m\0<j<n}} P(i, j), \int\limits_a^b
+\sum_{i=1}^{10} t_i, \int_0^\infty \mathrm{e}^{-x}\,\mathrm{d}x, \sum, \prod, \coprod,\\ 
+\bigoplus,\bigotimes, \bigodot, \bigcup, \bigcap, \biguplus, \bigsqcup, \bigvee, \bigwedge,\\ 
+\int, \oint, \iint, \iiint, \idotsint, \sum_{\substack{0<i<m\0<j<n}} P(i, j), \int\limits_a^b
 $$
 
 | Symbol                 | Script               |
@@ -176,12 +178,13 @@ $$
 | $\cdots$               | \cdots               |
 | $\vdots$               | \vdots               |
 | $\ddots$               | \ddots               |
+| $\propto$ | \propto |
 
 $$
 a` a^{\prime}, a’’, \hat{a}, \bar{a}, \grave{a}, \acute{a}, \dot{a}, \ddot{a}, \not{a}, \mathring{a},\\ 
 \overrightarrow{AB},\overleftarrow{AB}, a’’’, \overline{aaa}, \check{a},\vec{a}, \underline{a}, \color{red}x,\\
 \pm,\mp, \int y \mathrm{d}x, !, \int y\, \mathrm{d}x, \\
-\dots,\ldots,\cdots, \vdots, \ddots
+\dots,\ldots,\cdots, \vdots, \ddots, \propto
 $$
 
 
