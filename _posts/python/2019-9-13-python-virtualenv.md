@@ -36,7 +36,10 @@ $ virtualenv { 가상환경 이름 }
 3) 가상환경 실행
 
 ```bash
+# 윈도우 버전
 $ source venv/Scripts/activate
+# 리눅스 버전
+$ source venv/bin/activate
 ```
 
 \+ 위 명령어를 입력하면 가상환경이 실행됩니다.
