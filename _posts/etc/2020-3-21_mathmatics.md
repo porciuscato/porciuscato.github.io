@@ -46,20 +46,23 @@ $$
 
 #### Greek letters
 
-| Symbol   | Script |
-| :------- | :----- |
-| $\alpha$ | \alpha |
-| $A$      | A      |
-| $\beta$  | \beta  |
-| $B$      | B      |
-| $\gama$  | \gamma |
-| $\Gamma$ | \Gamma |
-| $\pi$    | \pi    |
-| $\Pi$    | \Pi    |
-| $\phi$   | \phi   |
+| Symbol     | Script   |
+| :--------- | :------- |
+| $\alpha$   | \alpha   |
+| $A$        | A        |
+| $\beta$    | \beta    |
+| $B$        | B        |
+| $\gama$    | \gamma   |
+| $\Gamma$   | \Gamma   |
+| $\pi$      | \pi      |
+| $\Pi$      | \Pi      |
+| $\phi$     | \phi     |
+| $\mu$      | \mu      |
+| $\sigma$   | \sigma   |
+| $\epsilon$ | \epsilon |
 
 $$
-\alpha, A, \beta, B, \gamma, \Gamma, \pi, \Pi, \phi
+\alpha, A, \beta, B, \gamma, \Gamma, \pi, \Pi, \phi, \mu, \sigma, \epsilon
 $$
 
 #### Operators
@@ -179,12 +182,13 @@ $$
 | $\vdots$               | \vdots               |
 | $\ddots$               | \ddots               |
 | $\propto$ | \propto |
+| $\in$ | \in |
 
 $$
 a` a^{\prime}, a’’, \hat{a}, \bar{a}, \grave{a}, \acute{a}, \dot{a}, \ddot{a}, \not{a}, \mathring{a},\\ 
 \overrightarrow{AB},\overleftarrow{AB}, a’’’, \overline{aaa}, \check{a},\vec{a}, \underline{a}, \color{red}x,\\
 \pm,\mp, \int y \mathrm{d}x, !, \int y\, \mathrm{d}x, \\
-\dots,\ldots,\cdots, \vdots, \ddots, \propto
+\dots,\ldots,\cdots, \vdots, \ddots, \propto, \in
 $$
 
 

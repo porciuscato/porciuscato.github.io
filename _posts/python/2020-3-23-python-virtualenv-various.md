@@ -1,7 +1,7 @@
 ---
 comments: true
 title: 윈도우에서 python 가상환경으로 다양한 버전 다루기
-published: false
+published: 2020-3-23
 updated: 2020-3-23
 tags: [python, virtualenv]
 categories: [development]
