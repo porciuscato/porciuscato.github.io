@@ -64,6 +64,8 @@ CHAR / VARCHAR / TEXT
 
   - national character를 의미한다. CHAR의 UTF-8 인코딩과 같다.
 
+  - 2바이트를 사용한다.
+
   - 다음의 코드들은 모두 같다.
 
     ```sql
@@ -77,6 +79,7 @@ CHAR / VARCHAR / TEXT
   - NCHAR의 가변길이형이다.
 
 - TEXT
+  
   - 가변길이형이다.
 
 
