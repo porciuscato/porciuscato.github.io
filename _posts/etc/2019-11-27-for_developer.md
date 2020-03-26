@@ -114,6 +114,12 @@ who is 강동주? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
 
 
 
+#### Python 공부
+
+- [파이썬 스터디](http://pythonstudy.xyz/)
+
+
+
 
 
 ## 온라인저지
