@@ -1,7 +1,7 @@
 ---
 comments: true
 title: sql command 모음
-published: 2020-3-24
+published: false
 updated: 2020-3-24
 tags: [sql]
 categories: [development]
@@ -30,6 +30,10 @@ SQL 커맨드 모음
 - [aliases](#aliases)
 - [joins](#joins)
 - [union](#union)
+- [group by](#group by)
+- [having](#having)
+- [exists](#exists)
+- [any, all](#any, all)
 
 
 
@@ -510,3 +514,112 @@ The UNION operator is used to combine the result-set of two or more SELECT state
   ```
 
   
+
+## group by
+
+칼럼의 값이 같은 것들을 한 행으로 묶는다.
+
+- 기본 문법
+
+  ```sql
+  SELECT column_name(s) FROM table_name WHERE condition
+  GROUP BY column_name(s)
+  ORDER BY column_name(s);
+  ```
+
+- 예시
+
+  ```sql
+  SELECT COUNT(CustomerID), Country FROM Customers
+  GROUP BY Country ORDER BY COUNT(CustomerID) DESC;
+  ```
+
+  > Country가 같은 것들을 묶는다.
+  >
+  > 이때 각 행은 국가에 속한 ID의 수와 국가를 보여준다.
+
+
+
+## having
+
+where가 쓰일 수 없는 위치에서 having을 쓴다. 가령 group by의 뒤쪽
+
+- 기본 문법
+
+  ```sql
+  SELECT column_name(s) FROM table_name WHERE condition
+  GROUP BY column_name(s) HAVING condition
+  ORDER BY column_name(s);
+  ```
+
+- 예시
+
+  ```sql
+  SELECT COUNT(CustomerID), Country FROM Customers 
+  GROUP BY Country
+  HAVING COUNT(CustomerID) > 5
+  ORDER BY COUNT(CustomerID) DESC;
+  ```
+
+  
+
+## exists
+
+서브 쿼리를 확인하기 위해 쓰인다. 만약 하나 이상의 레코드가 있다면 True를 반환한다.
+
+- 기본 문법
+
+  ```sql
+  SELECT column_name(s) FROM table_name
+  WHERE EXISTS (SELECT column_name FROM table_name WHERE condition);
+  ```
+
+- 예시
+
+  ```sql
+  SELECT SupplierName FROM Suppliers
+  WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND Price < 20);
+  ```
+
+  > exists의 조건을 만족하는 레코드가 하나 이상 있는 SupplierName을 반환한다.
+
+
+
+## any, all
+
+The ANY and ALL operators are used with a WHERE or HAVING clause.
+The ANY operator returns true if any of the subquery values meet the condition.
+The ALL operator returns true if all of the subquery values meet the condition.
+
+- ANY 기본 문법
+
+  ```sql
+  SELECT column_name(s) FROM table_name
+  WHERE column_name operator ANY
+  (SELECT column_name FROM table_name WHERE condition);
+  ```
+  - 예시
+
+    ```sql
+    SELECT ProductName FROM Products
+    WHERE ProductID = ANY (SELECT ProductID FROM OrderDetails WHERE Quantity > 99);
+    ```
+
+    > ANY 조건에 하나라도 부합하는 레코드가 있다면 True를 반환한다.
+
+- ALL 기본 문법
+
+  ```sql
+  SELECT column_name(s) FROM table_name
+  WHERE column_name operator ALL
+  (SELECT column_name FROM table_name WHERE condition);
+  ```
+
+  - 예시
+
+    ```sql
+    SELECT ProductName FROM Products
+    WHERE ProductID = ALL (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);
+    ```
+
+    > OrderDatails의 ProductID 칼럼이 모두 해당 조건을 만족해야만 True가 반환된다.
