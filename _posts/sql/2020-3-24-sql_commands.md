@@ -11,7 +11,7 @@ SQL 커맨드 모음
 
 
 
-[링크](https://www.w3schools.com/sql/exercise.asp?filename=exercise_functions1)
+[링크](https://www.w3schools.com/sql/default.asp)
 
 # 차례
 
@@ -40,6 +40,7 @@ SQL 커맨드 모음
 - [null functions](#null functions)
 - [stored procedures](#stored procedures)
 - [comments](#comments)
+- [limit](#limit)
 
 
 
@@ -895,6 +896,36 @@ If there is no ELSE part and no conditions are true, it returns NULL.
   /*Select all the columns
   of all the records
   in the Customers table:*/
+  ```
+
+  
+
+### limit
+
+used to specify the number of records to return
+
+- example
+
+  ```sql
+  SELECT * FROM Customers LIMIT 3;
+  ```
+
+  상위 3개만 반환
+
+- `SELECT TOP`
+
+  ```sql
+  SELECT TOP 3 * FROM Customers;
+  ```
+
+  > same as upper.
+  >
+  > not all databases support SELECT TOP
+
+- `ROWNUM` : Oracle
+
+  ```sql
+  SELECT * FROM Customers WHERE ROWNUM <= 3;
   ```
 
   
