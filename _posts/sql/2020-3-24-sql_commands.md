@@ -11,7 +11,7 @@ SQL 커맨드 모음
 
 
 
-[링크](https://www.w3schools.com/sql/exercise.asp?filename=exercise_functions1)
+[링크](https://www.w3schools.com/sql/default.asp)
 
 # 차례
 
@@ -34,6 +34,13 @@ SQL 커맨드 모음
 - [having](#having)
 - [exists](#exists)
 - [any, all](#any, all)
+- [select into](#select into)
+- [insert into](#insert into)
+- [case](#case)
+- [null functions](#null functions)
+- [stored procedures](#stored procedures)
+- [comments](#comments)
+- [limit](#limit)
 
 
 
@@ -191,41 +198,31 @@ DELETE FROM table_name WHERE condition;
 - `MIN()` : 최소값
 
   ```sql
-  SELECT MIN(column_name)
-  FROM table_name
-  WHERE condition;
+  SELECT MIN(column_name) FROM table_name WHERE condition;
   ```
-
+  
 - `MAX()`: 최대값
 
   ```sql
-  SELECT MAX(column_name)
-  FROM table_name
-  WHERE condition;
+  SELECT MAX(column_name) FROM table_name WHERE condition;
   ```
-
+  
 - `COUNT()`: 특정 칼럼의 row 갯수
 
   ```sql
-  SELECT COUNT(column_name)
-  FROM table_name
-  WHERE condition;
+  SELECT COUNT(column_name) FROM table_name WHERE condition;
   ```
-
+  
 - `AVG()`: 특정 칼럼 row 값들의 평균
 
   ```sql
-  SELECT AVG(column_name)
-  FROM table_name
-  WHERE condition;
+  SELECT AVG(column_name) FROM table_name WHERE condition;
   ```
-
+  
 - `SUM()` : 특정 칼럼 row 값들의 합
 
   ```sql
-  SELECT SUM(column_name)
-  FROM table_name
-  WHERE condition;
+  SELECT SUM(column_name) FROM table_name WHERE condition;
   ```
 
 
@@ -424,8 +421,19 @@ selects values wihtin a given range
   ```
 
   o 와 c의 교집합을 구한 뒤, 그 결과와 s의 교집합을 구한다.
-
-
+  
+  - 4개 테이블에서 정보 가져오기
+  
+    ```sql
+    SELECT O.OrderID, C.CustomerID, O.OrderDate, OD.ProductID, P.ProductName, P.Price, OD.Quantity 
+    FROM ((
+    (Orders as O join Customers as C on O.CustomerID = C.CustomerID)
+    join OrderDetails as OD on O.OrderID = OD.OrderID)
+    join Products as P on OD.ProductID = P.ProductID)
+    where O.OrderID = 10250;
+    ```
+  
+    
 
 ### LEFT JOIN
 
@@ -623,3 +631,301 @@ The ALL operator returns true if all of the subquery values meet the condition.
     ```
 
     > OrderDatails의 ProductID 칼럼이 모두 해당 조건을 만족해야만 True가 반환된다.
+
+
+
+## select into
+
+The SELECT INTO statement copies data from one table into a new table.
+
+This makes a new table.
+
+- Syntax
+
+  ```sql
+  SELECT * INTO newtable [IN externaldb]
+  FROM oldtable WHERE condition;
+  ```
+
+  it is possible to insert many columns.
+
+  ```sql
+  SELECT column1, column2, column3, ... INTO newtable [IN externaldb]
+  FROM oldtable WHERE condition;
+  ```
+
+- example
+
+  Use `IN` to insert another database.
+
+  ```sql
+  SELECT * INTO CustomersBackup2020 IN 'Backup.mdb' FROM Customers;
+  ```
+
+- create a new empty table with a same schema of older one
+
+  SELECT INTO can also be used to create a new, empty table using the schema of another. Just add a WHERE clause that causes the query **to return no data**
+
+  ```sql
+  SELECT * INTO newtable FROM oldtable WHERE 1 = 0;
+  ```
+
+  
+
+## insert into
+
+The INSERT INTO SELECT statement copies data from one table and inserts it into another table.
+
+```
+- INSERT INTO SELECT requires that data types in source and target tables match
+- The existing records in the target table are unaffected
+```
+
+- Syntax
+
+  ```sql
+  INSERT INTO table2 SELECT * FROM table1 WHERE condition;
+  ```
+
+  Copy only some columns
+
+  ```sql
+  INSERT INTO table2 (column1, column2, column3, ...)
+  SELECT column1, column2, column3, ...
+  FROM table1 WHERE condition;
+  ```
+
+- example
+
+  ```sql
+  INSERT INTO Customers (CustomerName, City, Country)
+  SELECT SupplierName, City, Country FROM Suppliers WHERE Country='Germany';
+  ```
+
+  
+
+## case
+
+The CASE statement goes through conditions and returns a value when the first condition is met **(like an IF-THEN-ELSE statement)**. So, once a condition is true, it will stop reading and return the result. If no conditions are true, it returns the value in the ELSE clause.
+
+If there is no ELSE part and no conditions are true, it returns NULL.
+
+- Syntax
+
+  ```sql
+  CASE
+      WHEN condition1 THEN result1
+      WHEN condition2 THEN result2
+      WHEN conditionN THEN resultN
+      ELSE result
+  END;
+  ```
+
+- example
+
+  ```sql
+  SELECT OrderID, Quantity,
+  CASE
+      WHEN Quantity > 30 THEN 'The quantity is greater than 30'
+      WHEN Quantity = 30 THEN 'The quantity is 30'
+      ELSE 'The quantity is under 30'
+  END AS QuantityText
+  FROM OrderDetails;
+  ```
+
+  result
+
+  | OrderID | Quantity | QuantityText             |
+  | :------ | :------- | :----------------------- |
+  | 10248   | 12       | The quantity is under 30 |
+  | 10248   | 10       | The quantity is under 30 |
+  | 10248   | 5        | The quantity is under 30 |
+
+- example 2
+
+  ```sql
+  SELECT OrderID, Quantity,
+  CASE
+      WHEN Quantity > 30 THEN 'The quantity is greater than 30'
+      WHEN Quantity = 30 THEN 'The quantity is 30'
+      ELSE 'The quantity is under 30'
+  END
+  FROM OrderDetails;
+  ```
+
+  result
+
+  | OrderID | Quantity | CASE WHEN Quantity > 30 THEN 'The quantity is greater than 30' WHEN Quantity = 30 THEN 'The quantity is 30' ELSE 'The quantity is under 30' END |
+  | :------ | :------- | :----------------------------------------------------------- |
+  | 10248   | 12       | The quantity is under 30                                     |
+  | 10248   | 10       | The quantity is under 30                                     |
+
+  > Use `AS` as possible as you can.
+
+- **Check this example out!**
+
+  ```sql
+  SELECT CustomerName, City, Country
+  FROM Customers
+  ORDER BY
+  (CASE
+      WHEN City IS NULL THEN Country
+      ELSE City
+  END);
+  ```
+
+
+
+## null functions
+
+- **IFNULL()**
+
+  - example
+
+    ```sql
+    SELECT ProductName, UnitPrice * (UnitsInStock + IFNULL(UnitsOnOrder, 0))
+    FROM Products;
+    ```
+
+    if UnitsOnOder is null, return 0 otherwise return UnitsOnOrder
+
+- **ISNULL()**
+
+  - example
+
+    ```sql
+    SELECT ProductName, UnitPrice * (UnitsInStock + ISNULL(UnitsOnOrder, 0))
+    FROM Products;
+    ```
+
+    same with IFNULL()
+
+- **COALESCE()**
+
+  - example
+
+    ```sql
+    SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
+    FROM Products;
+    ```
+
+    return the first non-null value on list
+
+- **NVL()**
+
+  - example
+
+    ```sql
+    SELECT ProductName, UnitPrice * (UnitsInStock + NVL(UnitsOnOrder, 0))
+    FROM Products;
+    ```
+
+    This is for Oracle DB.
+
+    
+
+## stored procedures
+
+&nbsp;&nbsp;A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+&nbsp;&nbsp;So if you have an SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.
+&nbsp;&nbsp;You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.
+
+- Stored Procedure Syntax
+
+  ```sql
+  CREATE PROCEDURE procedure_name
+  AS
+  sql_statement
+  GO;
+  ```
+
+- Execute Procedure Syntax
+
+  ```sql
+  EXEC procedure_name;
+  ```
+
+  - example
+
+    ```sql
+    CREATE PROCEDURE SelectAllCustomers
+    AS
+    SELECT * FROM Customers
+    GO;
+    
+    EXEC SelectAllCustomers;
+    ```
+
+- You can create procedures with **Parameters**.
+
+  - One param
+
+    ```sql
+    CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
+    AS
+    SELECT * FROM Customers WHERE City = @City
+    GO;
+    
+    EXEC SelectAllCustomers @City = 'London';
+    ```
+
+  - More than Two param
+
+    ```sql
+    CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
+    AS
+    SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
+    GO;
+    
+    EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
+    ```
+
+
+
+## comments
+
+- Single line
+
+  ```sql
+  --Select all:
+  ```
+
+- Multi line
+
+  ```sql
+  /*Select all the columns
+  of all the records
+  in the Customers table:*/
+  ```
+
+  
+
+### limit
+
+used to specify the number of records to return
+
+- example
+
+  ```sql
+  SELECT * FROM Customers LIMIT 3;
+  ```
+
+  상위 3개만 반환
+
+- `SELECT TOP`
+
+  ```sql
+  SELECT TOP 3 * FROM Customers;
+  ```
+
+  > same as upper.
+  >
+  > not all databases support SELECT TOP
+
+- `ROWNUM` : Oracle
+
+  ```sql
+  SELECT * FROM Customers WHERE ROWNUM <= 3;
+  ```
+
+  
