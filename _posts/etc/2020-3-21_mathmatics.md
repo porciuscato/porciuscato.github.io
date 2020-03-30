@@ -159,7 +159,7 @@ $$
 | $\bar{a}$              | \bar{a}              |
 | $\grave{a}$            | \grave{a}            |
 | $\acute{a}$            | \acute{a}            |
-| $\dot{a}               | \dot{a}              |
+| $\dot{a}$              | \dot{a}              |
 | $\ddot{a}$             | \ddot{a}             |
 | $\not{a}$              | \not{a}              |
 | $\mathring{a}$         | \mathring{a}         |
@@ -183,12 +183,13 @@ $$
 | $\ddots$               | \ddots               |
 | $\propto$ | \propto |
 | $\in$ | \in |
+| $\cdot$ | $\cdot$ |
 
 $$
 a` a^{\prime}, a’’, \hat{a}, \bar{a}, \grave{a}, \acute{a}, \dot{a}, \ddot{a}, \not{a}, \mathring{a},\\ 
 \overrightarrow{AB},\overleftarrow{AB}, a’’’, \overline{aaa}, \check{a},\vec{a}, \underline{a}, \color{red}x,\\
 \pm,\mp, \int y \mathrm{d}x, !, \int y\, \mathrm{d}x, \\
-\dots,\ldots,\cdots, \vdots, \ddots, \propto, \in
+\dots,\ldots,\cdots, \vdots, \ddots, \propto, \in, \cdot
 $$
 
 
@@ -209,3 +210,32 @@ $$
 (a),[a], {a}, \langle f \rangle, \lfloor f \rfloor, \lceil f \rceil, \ulcorner f \urcorner
 $$
 
+
+
+
+
+#### 예시 - align, 정렬
+
+```
+$$
+\begin{align*}
+y = y(x,t) &= A e^{i\theta} \\
+&= A (\cos \theta + i \sin \theta) \\
+&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\
+&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\
+&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\
+&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)
+\end{align*}
+$$
+```
+
+$$
+\begin{align*}
+y = y(x,t) &= A e^{i\theta} \\
+&= A (\cos \theta + i \sin \theta) \\
+&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\
+&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\
+&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\
+&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)
+\end{align*}
+$$
