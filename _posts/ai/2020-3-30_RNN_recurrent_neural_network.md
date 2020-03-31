@@ -2,7 +2,9 @@
 
 ../.. -> 빈칸으로 바꾸자
 
-\+ 모두를 위한 딥러닝 [link](https://hunkim.github.io/ml/)
+\+ 모두를 위한 딥러닝 [link](https://hunkim.github.io/ml/)
+
+모두의 딥러닝 이북[link](https://thebook.io/006958/part05/ch17/01-02/) 
 
 # 순환 신경망(RNN, Recurrent Neural Network)
 
@@ -34,6 +36,7 @@ $$
 $$
 \begin{align*}
 Y_t &= \phi(X_t\cdot W_x + Y_{t-1}\cdot W_y + b) \\
+&= \phi(\begin{bmatrix}X_t & Y_{t-1}\end{bmatrix}\begin{bmatrix}W_x\\W_y \end{bmatrix} + b)
 \end{align*}
 $$
 
@@ -54,7 +57,7 @@ $$
 $$
 h_t = f(h_{t-1}, x_t)
 $$
-위에서 살펴본 RNN은 출력 $y_t$가 다시 입력으로 들어갔지만, 아래의 그림과 같이 일반적으로 많이 사용되는 RNN은 출력 $y_t$와 히든 상태(state) $h_t$가 구분되며, 입력으로는 $h_t$가 들어간다. RNN에서의 활성화 함수롤는 $tanh$가 주로 사용되는데, 이유는 LSTM을 살펴볼 때 알아보도록 하자.
+위에서 살펴본 RNN은 출력 $y_t$가 다시 입력으로 들어갔지만, 아래의 그림과 같이 일반적으로 많이 사용되는 RNN은 출력 $y_t$와 히든 상태(state) $h_t$가 구분되며, 입력으로는 $h_t$가 들어간다. RNN에서의 활성화 함수로는 $tanh$가 주로 사용되는데, 이유는 LSTM을 살펴볼 때 알아보도록 하자.
 
 <center><img src="../../assets/images/AI/rnn_hidden.png" width="100%" style="margin: 0px auto;"></center>
 
@@ -256,3 +259,6 @@ outputs_val:(4, 2, 5)
 
 #### static_rnn()의 문제점
 
+`static_rnn()` 함수의 문제는 타임 스텝마다 하나의 셀을 그래프에 추가하기 때문에, 만약 타입 스텝이 많아질 경우 그래프가 매우 복잡해진다는 것이다. 쉽게 말하면, `for` 문과 같이 반복문을 쓰지 않고 동일한 셀을 타임 스텝별로 만드는 것이라 할 수 있다. 이럴 경우 타임 스텝이 많아서 그래프가 커지게 되면 역전파(backprop)시에 메모리 부족(OOM, Out-of-Memory) 에러가 발생할 수 있다.
+
+이러한 문제를 해결할 수 있는 방법으로는 `tf.nn.dynamic_rnn()`이 있다.

@@ -210,7 +210,17 @@ $$
 (a),[a], {a}, \langle f \rangle, \lfloor f \rfloor, \lceil f \rceil, \ulcorner f \urcorner
 $$
 
+#### Matrix
 
+| Symbol                                     | Script                                     |
+| ------------------------------------------ | ------------------------------------------ |
+| $\begin{bmatrix}a & b\\c & d\end{bmatrix}$ | `\begin{bmatrix}a & b\\c & d\end{bmatrix}` |
+| $\begin{matrix}a & b\\c & d\end{matrix}$   | `\begin{matrix}a & b\\c & d\end{matrix}`   |
+
+$$
+\begin{bmatrix}a & b\\c & d\end{bmatrix} \\
+\begin{matrix}a & b\\c & d\end{matrix}
+$$
 
 
 
