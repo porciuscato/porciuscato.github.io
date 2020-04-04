@@ -1026,6 +1026,10 @@ $ pip install django-cors-headers
 
 
 
+moducon 2019: 인공지능을 활용한 데이터, 로봇, 모바일, 예술 등을 주제로 한 34개의 완전 핫한 기술 발표 세션 http://moducon.kr/ 무료로 사용가능한, AI로 생성된 200 만개의 얼굴들 https://generated.photos/
+
+
+
 
 
 
@@ -1040,5 +1044,41 @@ $ pip install django-cors-headers
 
 
 
+1. Jira > Issues 완료된 이슈(이슈 > 미해결 이슈 > Epic 포함)만 완료로 처리 하기
 
+2. 스프린트 완료 처리하기(미해결 이슈는 다음 백로그로 자동 이동됨-계획이 왜 잘못되었는지도 고민)
+
+3. 코드 정리 (Polish code)
+
+   - 불필요한 내용들 정리 및 .gitignore 에 등록
+     - 빌드된 폴더: node_modules, dist, build, target, checkpoints
+     - 로그/임시파일, .settings, .idea, pycache 등등...
+   - Lint 적용: flake8, pep8사용되지 않는 import, 변수, 함수, class 정리
+
+4. 코드 리펙토링
+
+   - 폴더구조, 파일명, 클래스명이 명확한지 확인
+   - 반복/제어문이 깊어지면(indent) 함수로 분리하기
+   - 주석이 작성되었다면 변수나 함수명을 명확히 해서 주석이 없이도 이해할 수 있도록 하기
+
+5. 프로젝트 사용법 작성(README.md)
+
+   - Overview-프로젝트 설명, Prerequisites, Installation, Usage(Pretrained model, Training, Inference, Setup, Build, Test, Run, Deploy)방법들 등등..
+     - 참고: https://github.com/meanjs/mean
+   - License 설정작성 
+     - 참고: https://github.com/jcjohnson/densecap
+
+   - 프로젝트를 대표하는 아바타 설정
+
+6. master 브렌치에 version tagging(ex: v1.0.0), 내용에 릴리즈 노트 작성하기
+   - 참고: https://github.com/spring-projects/spring-boot/releases
+7. 프로젝트 정보 업데이트: 설정 > 일반 > General project
+   - Project descprtion: AWS 배포된 도메인 접속 주소
+   - Tags: 프로젝트 태깅 ex) vue, react, spring-boot, nodejs, sns, blog 등등
+
+
+
+깃랩 : 토픽 태그, 프로젝트 태그 다르니 주의. 
+
+깃헙에서는 토픽
 
