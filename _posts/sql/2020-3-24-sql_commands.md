@@ -42,6 +42,10 @@ SQL 커맨드 모음
 - [comments](#comments)
 - [limit](#limit)
 
+#### Database
+
+- [create](#create)
+
 
 
 ## select
@@ -929,3 +933,18 @@ used to specify the number of records to return
   ```
 
   
+
+---
+
+## Database
+
+### create
+
+- Syntax
+
+  ```sql
+  CREATE DATABASE databasename;
+  ```
+
+
+
