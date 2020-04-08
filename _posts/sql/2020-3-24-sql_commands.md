@@ -45,6 +45,7 @@ SQL 커맨드 모음
 #### Database
 
 - [create](#create)
+- [drop](#drop)
 
 
 
@@ -948,3 +949,12 @@ used to specify the number of records to return
 
 
 
+### drop
+
+- Syntax
+
+  ```sql
+  DROP DATABASE databasename;
+  ```
+
+  
