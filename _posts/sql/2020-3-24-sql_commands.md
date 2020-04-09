@@ -46,6 +46,7 @@ SQL 커맨드 모음
 
 - [create](#create)
 - [drop](#drop)
+- [backup](#backup)
 
 
 
@@ -958,3 +959,24 @@ used to specify the number of records to return
   ```
 
   
+
+### backup
+
+The BACKUP DATABASE statement is used in SQL Server to create a full back up of an existing SQL database.
+
+- Syntax
+
+  ```sql
+  BACKUP DATABASE databasename
+  TO DISK = 'filepath'
+  WITH DIFFERENTIAL;
+  ```
+
+- Example
+
+  ```sql
+  BACKUP DATABASE testDB
+  TO DISK = 'D:\backups\testDB.bak';
+  ```
+
+  D 드라이브 위치에 저장한다.
