@@ -942,11 +942,38 @@ used to specify the number of records to return
 
 ### create
 
-- Syntax
+데이터베이스, 테이블 생성하는 명령어다.
+
+- Syntax Database
 
   ```sql
   CREATE DATABASE databasename;
   ```
+  
+- Syntax Table
+
+  ```sql
+  CREATE TABLE table_name (
+      column1 datatype,
+      column2 datatype,
+      column3 datatype,
+     ....
+  );
+  ```
+
+  - example
+
+    ```sql
+    CREATE TABLE Persons (
+        PersonID int,
+        LastName varchar(255),
+        FirstName varchar(255),
+        Address varchar(255),
+        City varchar(255)
+    );
+    ```
+
+    
 
 
 
