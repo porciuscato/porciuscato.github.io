@@ -47,6 +47,7 @@ SQL 커맨드 모음
 - [create](#create)
 - [drop](#drop)
 - [backup](#backup)
+- [alter](#alter)
 
 
 
@@ -975,17 +976,24 @@ used to specify the number of records to return
 
     
 
-
-
 ### drop
 
-- Syntax
+- Syntax Database
 
   ```sql
   DROP DATABASE databasename;
   ```
 
+
+- Syntax Table
+
+  ```sql
+  DROP TABLE Shippers;
+  ```
+
   
+
+
 
 ### backup
 
@@ -1007,3 +1015,20 @@ The BACKUP DATABASE statement is used in SQL Server to create a full back up of 
   ```
 
   D 드라이브 위치에 저장한다.
+
+
+
+### alter
+
+- Syntax
+
+  ```sql
+  ALTER TABLE table_name
+  ADD column_name datatype;
+  ```
+
+  - example
+
+    ```sql
+    ALTER TABLE Customers ADD Email varchar(255);
+    ```
