@@ -48,6 +48,7 @@ SQL 커맨드 모음
 - [drop](#drop)
 - [backup](#backup)
 - [alter](#alter)
+- [constraint](#constraint)
 
 
 
@@ -1032,3 +1033,30 @@ The BACKUP DATABASE statement is used in SQL Server to create a full back up of 
     ```sql
     ALTER TABLE Customers ADD Email varchar(255);
     ```
+
+
+
+### constraint
+
+SQL constraints are used to specify rules for the data in a table. This is specified with CREATE or ALTER.
+
+- Syntax
+
+  ```sql
+  CREATE TABLE table_name (
+      column1 datatype constraint,
+      column2 datatype constraint,
+      column3 datatype constraint,
+      ....
+  );
+  ```
+
+- Examples of constraint
+  - **[NOT NULL](https://www.w3schools.com/sql/sql_notnull.asp)** - Ensures that a column cannot have a NULL value
+  - **[UNIQUE](https://www.w3schools.com/sql/sql_unique.asp)** - Ensures that all values in a column are different
+  - **[PRIMARY KEY](https://www.w3schools.com/sql/sql_primarykey.asp)** - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+  - **[FOREIGN KEY](https://www.w3schools.com/sql/sql_foreignkey.asp)** - Uniquely identifies a row/record in another table
+  - **[CHECK](https://www.w3schools.com/sql/sql_check.asp)** - Ensures that all values in a column satisfies a specific condition
+  - **[DEFAULT](https://www.w3schools.com/sql/sql_default.asp)** - Sets a default value for a column when no value is specified
+  - **[INDEX](https://www.w3schools.com/sql/sql_create_index.asp)** - Used to create and retrieve data from the database very quickly
+
