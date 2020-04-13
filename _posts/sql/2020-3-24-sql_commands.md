@@ -1060,3 +1060,24 @@ SQL constraints are used to specify rules for the data in a table. This is speci
   - **[DEFAULT](https://www.w3schools.com/sql/sql_default.asp)** - Sets a default value for a column when no value is specified
   - **[INDEX](https://www.w3schools.com/sql/sql_create_index.asp)** - Used to create and retrieve data from the database very quickly
 
+- **NOT NULL**
+
+  By default, a column can hold NULL values. The NOT NULL constraint enforces a column to NOT accept NULL values.
+
+  - Syntax 
+
+    ```sql
+    CREATE TABLE Persons (
+        ID int NOT NULL,
+        Name varchar(255) NOT NULL,
+        Age int
+    );
+    ```
+
+    ```sql
+    ALTER TABLE Persons
+    MODIFY Age int NOT NULL;
+    ```
+
+    
+
