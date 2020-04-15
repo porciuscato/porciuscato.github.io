@@ -9,9 +9,9 @@ categories: [development]
 
 SQL 커맨드 모음
 
+[TCP School](http://tcpschool.com/mysql/mysql_operator_comparison)
 
-
-[링크](https://www.w3schools.com/sql/default.asp)
+[w3 school](https://www.w3schools.com/sql/default.asp)
 
 # 차례
 
@@ -41,6 +41,7 @@ SQL 커맨드 모음
 - [stored procedures](#stored procedures)
 - [comments](#comments)
 - [limit](#limit)
+- [변수사용](#변수사용)
 
 #### Database
 
@@ -49,6 +50,14 @@ SQL 커맨드 모음
 - [backup](#backup)
 - [alter](#alter)
 - [constraint](#constraint)
+
+### 연산자
+
+- [대입연산자](#대입연산자)
+
+
+
+
 
 
 
@@ -936,7 +945,33 @@ used to specify the number of records to return
   SELECT * FROM Customers WHERE ROWNUM <= 3;
   ```
 
+
+
+
+
+
+### 변수사용
+
+SQL에서 변수를 선언하고 사용하는 방법이다.
+
+- example
+
+  ```sql
+  --변수 생성 
+  --declare 변수명 타입 
+  DECLARE @name varchar(20) 
   
+  --변수에 값 할당 
+  SET @name = 'Kendrick' 
+  
+  --혹은 
+  --userid가 sonim1일 때 이름이 Kendrick일 경우 
+  SELECT @name = P.name FROM tblPerson P WHERE userid = 'sonim1'
+  ```
+
+  
+
+
 
 ---
 
@@ -1079,5 +1114,47 @@ SQL constraints are used to specify rules for the data in a table. This is speci
     MODIFY Age int NOT NULL;
     ```
 
-    
+
+----
+
+
+
+## 연산자
+
+### 대입연산자
+
+| 대입연산자 | 설명                                                         |
+| ---------- | ------------------------------------------------------------ |
+| =          | 왼쪽 피연산자에 오른쪽 피연산자를 대입함. (SET 문이나 UPDATE 문의 SET 절에서만 대입연산자로 사용됨) |
+| :=         | 왼쪽 피연산자에 오른쪽 피연산자를 대입함.                    |
+
+- example: 프로그래머스 입양시각 구하기 [링크](https://programmers.co.kr/learn/courses/30/lessons/59413)
+
+  ```sql
+  SET @hour = -1; 
+  
+  SELECT 
+  @hour := @hour + 1 AS HOUR, 
+  (   
+      SELECT COUNT(DATETIME) 
+      FROM ANIMAL_OUTS
+      WHERE HOUR(DATETIME) = @hour 
+  ) 
+  AS COUNT 
+  FROM ANIMAL_OUTS
+  WHERE @hour < 23
+  ```
+
+  ```sql
+  set @hour := -1;
+  select @hour := @hour + 1 as HOUR from ANIMAL_OUTS;
+  -- 결과
+  HOUR
+  0
+  1
+  2
+  3
+  ```
+
+  
 
