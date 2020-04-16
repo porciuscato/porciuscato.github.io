@@ -50,6 +50,7 @@ SQL 커맨드 모음
 - [backup](#backup)
 - [alter](#alter)
 - [constraint](#constraint)
+- [check](#check)
 
 ### 연산자
 
@@ -1115,6 +1116,29 @@ SQL constraints are used to specify rules for the data in a table. This is speci
     ```
 
 
+
+### check
+
+The CHECK constraint is used to limit the value range that can be placed in a column.
+If you define a CHECK constraint on a single column it allows only certain values for this column.
+If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row.
+
+- Syntax
+
+  ```sql
+  CREATE TABLE Persons (
+      ID int NOT NULL,
+      LastName varchar(255) NOT NULL,
+      FirstName varchar(255),
+      Age int,
+      CHECK (Age>=18)
+  );
+  ```
+
+  
+
+
+
 ----
 
 
@@ -1157,4 +1181,3 @@ SQL constraints are used to specify rules for the data in a table. This is speci
   ```
 
   
-
