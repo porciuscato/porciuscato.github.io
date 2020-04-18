@@ -51,6 +51,7 @@ SQL 커맨드 모음
 - [alter](#alter)
 - [constraint](#constraint)
 - [check](#check)
+- [index](#index)
 
 ### 연산자
 
@@ -1133,6 +1134,38 @@ If you define a CHECK constraint on a table it can limit the values in certain c
       Age int,
       CHECK (Age>=18)
   );
+  ```
+
+  
+
+### index
+
+The CREATE INDEX statement is used to create indexes in tables.
+Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
+
+- Create Index
+
+  ```sql
+  CREATE INDEX index_name
+  ON table_name (column1, column2, ...);
+  ```
+
+- Create Unique Index
+
+  ```sql
+  CREATE UNIQUE INDEX index_name
+  ON table_name (column1, column2, ...);
+  ```
+
+- Drop Index
+
+  ```sql
+  -- MS Access
+  DROP INDEX index_name ON table_name;
+  -- SQL Server
+  DROP INDEX table_name.index_name;
+  -- MySQL
+  ALTER TABLE table_name DROP INDEX index_name;
   ```
 
   
