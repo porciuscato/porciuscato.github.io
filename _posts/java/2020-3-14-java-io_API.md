@@ -27,13 +27,15 @@ categories: [development]
 
 자바는 입출력을 위한 함수들이 객체에 묶여 있다. 
 
-- System.out.write();
-- System.out.print();
-- System.out.println();
-- System.out.printf();
-- System.in.read();
-- System.in.skip();
-- System.in.rest();
+- 출력
+  - System.out.write();
+  - System.out.print();
+  - System.out.println();
+  - System.out.printf();
+- 입력
+  - System.in.read();
+  - System.in.skip();
+  - System.in.rest();
 
 out과 in은 Stream 객체다.
 
@@ -53,7 +55,7 @@ out과 in은 Stream 객체다.
 
 자바에서는 `OutputStream`이라 한다. 
 
-Stream은 단방향 버퍼다. 
+Stream은 단방향 버퍼다.   -> 출력방향, 입력방향이 정해져있다. 
 
 Stream은 많은 어플리케이션들이 비동기 형식으로 일을 할 수 있도록 만든다.
 
@@ -67,7 +69,7 @@ ex) 자동차라면 아반테는 개체, 실제 매장에서 구매한 차는 �
 
 
 
-입출력 버퍼에서는 개체가 필요없다. 실제 존재하는 객체가 필요하다.
+>  입출력 버퍼에서는 개체가 필요없다. 실제 존재하는 객체가 필요하다. 입출력에서는 개체가 아닌 객체를 사용한다.
 
 #### 입출력 API는 입/출력 스트림 객체를 이용한다.
 
@@ -139,7 +141,7 @@ System.out.flush();
 이런 반복적인 일을 대신해주는 함수가 있다.
 
 - print()
-- println()
+- println()    // print line
 - printf()
 
 System.out은 출력 스트림의 이름인데, 자세하게 말하자면 여러 기능을 제공하는 (write, flush, print 등등) `응용 객체의 이름`이다.
@@ -155,6 +157,8 @@ System.out.print("hello");
 System.out.print(3.54);
 ```
 
+> 3.54를 그대로 버퍼에서 출력하는 것은 어려운 일이다. 점에 대한 처리까지 모두 해줘야하기 때문이다. 하지만 print() 함수는 이를 모두 자동으로 처리해준다. 많은 코드 변환이 내부적으로 일어난다.
+
 > ####  주석처리
 >
 > \- `// one line`
@@ -162,4 +166,21 @@ System.out.print(3.54);
 > \- `/* multi-line*/`
 
 그러나 위처럼 코드를 작성하면 한 줄로 출력된다.
+
+
+
+## Escape 문자
+
+##### 출력을 제어하기 위한 방법이 필요하다.
+
+| 이스케이프 문자0 | 설명                                            |
+| ---------------- | ----------------------------------------------- |
+| \b               | 백스페이스(back space)                          |
+| \t               | 수평 탭(Horizontal tab) 사입                    |
+| \n               | 새 행(new line) 삽입                            |
+| \f               | 폼피드(form feed - 다음 페이지로)               |
+| \r               | 캐리지리턴(carriage return  - 제일 왼쪽 위치로) |
+| \\'              | 홑 따옴표 삽입                                  |
+| \\"              | 이중 따옴표 삽입                                |
+| \\               | 역슬래쉬 삽입                                   |
 
