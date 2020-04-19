@@ -540,6 +540,14 @@ The UNION operator is used to combine the result-set of two or more SELECT state
   SELECT 'Supplier', ContactName, City, Country FROM Suppliers;
   ```
 
+- 모든 칼럼이 맞지 않을 때 NULL을 대신 사용할 수도 있다.
+
+  ```sql
+  SELECT FirstName, LastName, Company FROM businessContacts
+  UNION
+  SELECT FirstName, LastName, NULL FROM otehrContacts;
+  ```
+
   
 
 ## group by
