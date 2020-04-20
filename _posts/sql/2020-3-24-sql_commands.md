@@ -9,9 +9,9 @@ categories: [development]
 
 SQL 커맨드 모음
 
+[TCP School](http://tcpschool.com/mysql/mysql_operator_comparison)
 
-
-[링크](https://www.w3schools.com/sql/default.asp)
+[w3 school](https://www.w3schools.com/sql/default.asp)
 
 # 차례
 
@@ -41,10 +41,25 @@ SQL 커맨드 모음
 - [stored procedures](#stored procedures)
 - [comments](#comments)
 - [limit](#limit)
+- [변수사용](#변수사용)
 
 #### Database
 
 - [create](#create)
+- [drop](#drop)
+- [backup](#backup)
+- [alter](#alter)
+- [constraint](#constraint)
+- [check](#check)
+- [index](#index)
+
+### 연산자
+
+- [대입연산자](#대입연산자)
+
+
+
+
 
 
 
@@ -525,6 +540,14 @@ The UNION operator is used to combine the result-set of two or more SELECT state
   SELECT 'Supplier', ContactName, City, Country FROM Suppliers;
   ```
 
+- 모든 칼럼이 맞지 않을 때 NULL을 대신 사용할 수도 있다.
+
+  ```sql
+  SELECT FirstName, LastName, Company FROM businessContacts
+  UNION
+  SELECT FirstName, LastName, NULL FROM otehrContacts;
+  ```
+
   
 
 ## group by
@@ -932,7 +955,33 @@ used to specify the number of records to return
   SELECT * FROM Customers WHERE ROWNUM <= 3;
   ```
 
+
+
+
+
+
+### 변수사용
+
+SQL에서 변수를 선언하고 사용하는 방법이다.
+
+- example
+
+  ```sql
+  --변수 생성 
+  --declare 변수명 타입 
+  DECLARE @name varchar(20) 
   
+  --변수에 값 할당 
+  SET @name = 'Kendrick' 
+  
+  --혹은 
+  --userid가 sonim1일 때 이름이 Kendrick일 경우 
+  SELECT @name = P.name FROM tblPerson P WHERE userid = 'sonim1'
+  ```
+
+  
+
+
 
 ---
 
@@ -940,11 +989,236 @@ used to specify the number of records to return
 
 ### create
 
-- Syntax
+데이터베이스, 테이블 생성하는 명령어다.
+
+- Syntax Database
 
   ```sql
   CREATE DATABASE databasename;
   ```
+  
+- Syntax Table
+
+  ```sql
+  CREATE TABLE table_name (
+      column1 datatype,
+      column2 datatype,
+      column3 datatype,
+     ....
+  );
+  ```
+
+  - example
+
+    ```sql
+    CREATE TABLE Persons (
+        PersonID int,
+        LastName varchar(255),
+        FirstName varchar(255),
+        Address varchar(255),
+        City varchar(255)
+    );
+    ```
+
+    
+
+### drop
+
+- Syntax Database
+
+  ```sql
+  DROP DATABASE databasename;
+  ```
+
+
+- Syntax Table
+
+  ```sql
+  DROP TABLE Shippers;
+  ```
+
+  
 
 
 
+### backup
+
+The BACKUP DATABASE statement is used in SQL Server to create a full back up of an existing SQL database.
+
+- Syntax
+
+  ```sql
+  BACKUP DATABASE databasename
+  TO DISK = 'filepath'
+  WITH DIFFERENTIAL;
+  ```
+
+- Example
+
+  ```sql
+  BACKUP DATABASE testDB
+  TO DISK = 'D:\backups\testDB.bak';
+  ```
+
+  D 드라이브 위치에 저장한다.
+
+
+
+### alter
+
+- Syntax
+
+  ```sql
+  ALTER TABLE table_name
+  ADD column_name datatype;
+  ```
+
+  - example
+
+    ```sql
+    ALTER TABLE Customers ADD Email varchar(255);
+    ```
+
+
+
+### constraint
+
+SQL constraints are used to specify rules for the data in a table. This is specified with CREATE or ALTER.
+
+- Syntax
+
+  ```sql
+  CREATE TABLE table_name (
+      column1 datatype constraint,
+      column2 datatype constraint,
+      column3 datatype constraint,
+      ....
+  );
+  ```
+
+- Examples of constraint
+  - **[NOT NULL](https://www.w3schools.com/sql/sql_notnull.asp)** - Ensures that a column cannot have a NULL value
+  - **[UNIQUE](https://www.w3schools.com/sql/sql_unique.asp)** - Ensures that all values in a column are different
+  - **[PRIMARY KEY](https://www.w3schools.com/sql/sql_primarykey.asp)** - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+  - **[FOREIGN KEY](https://www.w3schools.com/sql/sql_foreignkey.asp)** - Uniquely identifies a row/record in another table
+  - **[CHECK](https://www.w3schools.com/sql/sql_check.asp)** - Ensures that all values in a column satisfies a specific condition
+  - **[DEFAULT](https://www.w3schools.com/sql/sql_default.asp)** - Sets a default value for a column when no value is specified
+  - **[INDEX](https://www.w3schools.com/sql/sql_create_index.asp)** - Used to create and retrieve data from the database very quickly
+
+- **NOT NULL**
+
+  By default, a column can hold NULL values. The NOT NULL constraint enforces a column to NOT accept NULL values.
+
+  - Syntax 
+
+    ```sql
+    CREATE TABLE Persons (
+        ID int NOT NULL,
+        Name varchar(255) NOT NULL,
+        Age int
+    );
+    ```
+
+    ```sql
+    ALTER TABLE Persons
+    MODIFY Age int NOT NULL;
+    ```
+
+
+
+### check
+
+The CHECK constraint is used to limit the value range that can be placed in a column.
+If you define a CHECK constraint on a single column it allows only certain values for this column.
+If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row.
+
+- Syntax
+
+  ```sql
+  CREATE TABLE Persons (
+      ID int NOT NULL,
+      LastName varchar(255) NOT NULL,
+      FirstName varchar(255),
+      Age int,
+      CHECK (Age>=18)
+  );
+  ```
+
+  
+
+### index
+
+The CREATE INDEX statement is used to create indexes in tables.
+Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
+
+- Create Index
+
+  ```sql
+  CREATE INDEX index_name
+  ON table_name (column1, column2, ...);
+  ```
+
+- Create Unique Index
+
+  ```sql
+  CREATE UNIQUE INDEX index_name
+  ON table_name (column1, column2, ...);
+  ```
+
+- Drop Index
+
+  ```sql
+  -- MS Access
+  DROP INDEX index_name ON table_name;
+  -- SQL Server
+  DROP INDEX table_name.index_name;
+  -- MySQL
+  ALTER TABLE table_name DROP INDEX index_name;
+  ```
+
+  
+
+
+
+----
+
+
+
+## 연산자
+
+### 대입연산자
+
+| 대입연산자 | 설명                                                         |
+| ---------- | ------------------------------------------------------------ |
+| =          | 왼쪽 피연산자에 오른쪽 피연산자를 대입함. (SET 문이나 UPDATE 문의 SET 절에서만 대입연산자로 사용됨) |
+| :=         | 왼쪽 피연산자에 오른쪽 피연산자를 대입함.                    |
+
+- example: 프로그래머스 입양시각 구하기 [링크](https://programmers.co.kr/learn/courses/30/lessons/59413)
+
+  ```sql
+  SET @hour = -1; 
+  
+  SELECT 
+  @hour := @hour + 1 AS HOUR, 
+  (   
+      SELECT COUNT(DATETIME) 
+      FROM ANIMAL_OUTS
+      WHERE HOUR(DATETIME) = @hour 
+  ) 
+  AS COUNT 
+  FROM ANIMAL_OUTS
+  WHERE @hour < 23
+  ```
+
+  ```sql
+  set @hour := -1;
+  select @hour := @hour + 1 as HOUR from ANIMAL_OUTS;
+  -- 결과
+  HOUR
+  0
+  1
+  2
+  3
+  ```
+
+  

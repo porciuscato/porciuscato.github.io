@@ -1113,3 +1113,58 @@ https://github.com/GunhoChoi/PyTorch-FastCampus/blob/master/05_RNN/RNN.pdf
 
 
 https://www.erdcloud.com/
+---
+
+### 개발 관련 자료 찾기
+
+- linked in
+
+  - 포트폴리오, 기술 스택 등을 올려 놓으면 관련 회사와 컨택이 될 수 있다.
+
+- `awesome` 키워드를 사용한 검색
+
+  ex) awesome blockchain을 찾으면 블록체인 관련, 찾을 수 있다.
+
+  ex) awesome AI 를 검색하면 요약된 글들이 잘 나온다.
+
+- 이동 시간을 활용한 팟캐스트 듣기
+
+  - 개발자 팟캐스트
+
+    - stdout.fm
+    - byebug
+    - 나는 프로그래머다
+    - 개발자도 궁금한 IT 인프라
+    - 데이터 지능: 전문가가 들려주는 데이터 & 인공지능 이야기
+
+    
+
+    - TEDTalks 기술
+    - 적분이 콩나물 사는데 무슨 도움이 돼?
+    - 디지털 히어로즈
+    - 손에 잡히는 경제
+
+- 관심사를 가진 사람들이 모이는 커뮤니티
+- Hub 사이트 방문하기
+  - 오픈 소스를 검색할 땐 github. 
+  - hub는 
+- 최신 글로벌 트랜드, 보고서, 아티클
+  - DZone
+- IT 관련(기술, 기업) 자세한 분석 기사
+  - outstanding
+- Hipster / Tech Stack / Geek / Project
+- 동영상 강의
+  - 노마드 코더
+  - edwith
+  - Tacademy
+  - 컨퍼런스
+    - 삼성 SDS Techtonic
+    - if kakao
+    - deview
+    - PyCon
+    - FEConf
+    - SOSCON
+
+
+
+erd cloud 추가할 것

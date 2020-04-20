@@ -49,13 +49,15 @@ byte x = (byte)30; // (명식적 형변환)
 ```
 
 #### 실수형식
+
 | 종류   | 크기 byte |
 | ------ | --------- |
 | float  | 4         |
 | double | 8         |
 
 ```java
-float x = 3.5;
+float x = 3.5; // 3.5는 double형이기 때문에 이는 명시적으로 형변환을 해야한다.
+// -> float x = (float)3.5 or 3.5f;
 double x = 3.5f; // 묵시적 형변환
 ```
 
