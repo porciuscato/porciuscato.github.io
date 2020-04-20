@@ -120,6 +120,14 @@ who is 강동주? -> [갓동주쌤 CEO of HPHK](https://hphk.kr/)
 
 
 
+#### 웹 공부
+
+- [웹](https://poiemaweb.com/)
+
+https://revealjs.com/#/
+
+
+
 
 
 ## 온라인저지
@@ -1100,3 +1108,8 @@ https://github.com/GunhoChoi/PyTorch-FastCampus/blob/master/05_RNN/RNN.pdf
 
 깃헙에서는 토픽
 
+
+
+
+
+https://www.erdcloud.com/
