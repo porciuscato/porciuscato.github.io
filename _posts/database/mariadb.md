@@ -24,4 +24,9 @@ sudo vi /etc/mysql/my.cnf
 
 bind-address 를 0.0.0.0으로 바꾸고 mysql을 다시 실행
 
+```bash
+sudo service mysql restart
+```
+
+
 
