@@ -41,11 +41,11 @@ $ pip install libmysqlclient-dev
 $ pip install mysqlclient
 ```
 
-두 명령어로도 설치가 안 된다면 다른 방법을 설치해야 합니다.
+두 명령어로도 설치가 안 된다면 다른 방법으로 설치합니다.
 
 이 [링크](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient)로 들어간 뒤, Mysqlclient 중 현재 버전에 맞는 것을 설치합니다.
 
-cp38은 CPython 3.8 버전을 의미합니다. `python -V`으로 버전을 확인한 뒤 적절한 파일을 다운받습니다.
+cp38은 CPython 3.8 버전을 의미합니다. `python -V`으로 버전을 확인한 뒤 적절한 파일을 다운받습니다. 운영체제가 64비트면 amd64를, 32비트면 win32를 받습니다.
 
 이후 아래 명령어를 실행하여 설치를 진행합니다.
 
@@ -75,13 +75,13 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db-name',  # 만든 DB의 이름을 넣습니다.
+        'NAME': 'db-name',  # 만든 DB(스키마)의 이름을 넣습니다.
         'USER': 'db-user-name', # DB 생성 시 설정한 ID
         'PASSWORD': 'db-password', # DB 생성 시 설정한 Password
         'HOST': 'db-adress', # 공백일 시 default인 localhost 
                              # 외부 DB에 접근하려면 IP를 적어야 합니다.
                              # ex) 127.13.0.12 
-        'PORT': 'port-number' #공백일 시 default인 3306
+        'PORT': 'port-number', #공백일 시 default인 3306
         'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
@@ -112,6 +112,14 @@ django_admin_log
 djang_content_type
 django_migrations
 django_session
+```
+
+
+
+관리자 계정을 생성합니다.
+
+```bash
+python manage.py createsuperuser
 ```
 
 
