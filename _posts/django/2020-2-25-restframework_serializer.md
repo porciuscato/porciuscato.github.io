@@ -232,6 +232,7 @@ class HumanSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Human
         fields = ('name', 'alias',)
+        # 모든 필드는 fields = '__all__'
 ```
 
 
