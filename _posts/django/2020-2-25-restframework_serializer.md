@@ -131,6 +131,20 @@ field flags는 특정 환경에서 어떻게 보여져야하는지 컨트롤할 
 
 
 
+## admin 페이지에 모델 등록하기
+
+admin 페이지에서 만든 모델을 직접 관리할 수 있습니다. 이를 위해선 아래와 같이 작성한 모델을 등록해야합니다. `앱/admin.py`에 코드를 적습니다.
+
+```python
+from django.contrib import admin
+from .models import Example # 작성한 모델들을 가져옵니다.
+
+class ExampleAdmin(admin.ModelAdmin):
+  list_display = ('id', 'title', 'regdate',)
+ 
+admin.site.register(Example, ExampleAdmin)
+```
+
 
 
 
