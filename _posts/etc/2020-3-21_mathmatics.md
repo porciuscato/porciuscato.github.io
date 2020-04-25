@@ -11,6 +11,12 @@ categories: [development]
 
 
 
+Typora에서 Latex를 사용하면 수학식을 넣을 수 있다. 이를 위해 환경설정에서 Latex 사용을 허가하자.
+
+환경설정 -> Markdown -> 문법 강조 지원 -> `인라인 수식` 을 체크하자.
+
+
+
 이 [글](https://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/)을 참조했다.
 
 수식을 작성하려면 먼저 ``$$`` 을 쓰고 엔터를 입력한다. 이는 Math Block을 형성하는 명령어다. 그러면 다음과 같은 창이 뜨는 것을 확인할 수 있다.
@@ -42,6 +48,10 @@ f(x) = \\
 $$
 ```
 
+위처럼 여러 줄이 아닌, $\alpha$, 이처럼 inline으로 사용하고 싶다면 `$....$` 달러표시를 하나씩 사용하자.
+
+
+
 
 
 #### Greek letters
@@ -52,7 +62,7 @@ $$
 | $A$        | A        |
 | $\beta$    | \beta    |
 | $B$        | B        |
-| $\gama$    | \gamma   |
+| $\gamma$   | \gamma   |
 | $\Gamma$   | \Gamma   |
 | $\pi$      | \pi      |
 | $\Pi$      | \Pi      |
