@@ -1,5 +1,9 @@
 mariadb 설치 및 제거
 
+https://mariadb.com/kb/en/mariadb-installation-dependancy-problems-and-failed-to-start-service/
+
+http://magic.wickedmiso.com/105
+
 https://www.buyprotheme.com/uninstall-mysql-from-ubuntu-and-install-mariadb/
 
 

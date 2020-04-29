@@ -31,7 +31,7 @@ django와 외부 데이터베이스를 연동해보도록 합시다.
 
 ### Python MariaDB 설치
 
-MariaDB를 사용하기 위해선 mysql 모듈을 설치해야 합니다. 아래 명령어를 입력하여 설치를 진행합니다.
+windows 환경에서 MariaDB를 사용하기 위해선 mysql 모듈을 설치해야 합니다. 아래 명령어를 입력하여 설치를 진행합니다.
 
 ```bash
 $ pip install libmysqlclient-dev
