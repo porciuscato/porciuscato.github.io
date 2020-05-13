@@ -1149,8 +1149,10 @@ https://www.erdcloud.com/
   - 오픈 소스를 검색할 땐 github. 
   - hub는 
 - 최신 글로벌 트랜드, 보고서, 아티클
+  
   - DZone
 - IT 관련(기술, 기업) 자세한 분석 기사
+  
   - outstanding
 - Hipster / Tech Stack / Geek / Project
 - 동영상 강의
@@ -1168,3 +1170,15 @@ https://www.erdcloud.com/
 
 
 erd cloud 추가할 것
+
+
+
+https://www.electronjs.org/
+
+
+
+
+
+web RTC
+
+https://ui.toast.com/weekly-pick/ko_20160812/
