@@ -1,5 +1,5 @@
 ---
-title: 그래프 상포 배타집합
+title: 그래프 상호 배타집합
 published: true
 updated: 2020-5-15
 tags: [python, algorithm, graph, disjoint-set]
@@ -118,8 +118,10 @@ categories: [development]
 
     ```python
     def Find_set(x):
-        if x == p[x]: return x
-        else: return Find_set(p[x])
+        if x == p[x]: 
+            return x
+        else: 
+            return Find_set(p[x])
     ```
 
 - Union(x, y)
