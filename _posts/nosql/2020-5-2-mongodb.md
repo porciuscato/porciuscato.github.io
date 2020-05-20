@@ -2,7 +2,7 @@
 comments: true
 title: NoSQL Mongo DB에 대해 알아보자
 published: false
-updated: 2020-3-8
+updated: 2020-5-2
 tags: [nosql, mongodb]
 categories: [development]
 ---
@@ -55,6 +55,11 @@ NoSQL인 MongoDB에 대해 알아보자.
 
 ## MongoDB 설치
 
+[다운로드 페이지](https://www.mongodb.com/download-center/community) 로 가, 운영체제에 맞는 DB를 설치한다.
+
+기본 데이터 위치는 
+`C:\Program Files\MongoDB\Server\4.2\data\`이고, 로그 위치는 `C:\Program Files\MongoDB\Server\4.2\log\`이다.
+
 
 
 ## Mongo DB 모델링
@@ -83,6 +88,8 @@ NoSQL인 MongoDB에 대해 알아보자.
       ]
   }
   ```
+
+
 
 #### 참고
 
