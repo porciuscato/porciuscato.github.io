@@ -418,6 +418,8 @@ selects values wihtin a given range
   > - 어떤 SQL 에서는 LEFT OUTER JOIN으로 써야한다.
 
   <center><img src="/assets/images/sql/sql_join.jpg" width="100%" style="margin: 0px auto;"></center>
+  
+  <center><img src="/assets/images/sql/sql_join2.png" width="70%" style="margin: 0px auto;"></center>
 
 ### INNER JOIN
 
@@ -979,7 +981,22 @@ SQL에서 변수를 선언하고 사용하는 방법이다.
   SELECT @name = P.name FROM tblPerson P WHERE userid = 'sonim1'
   ```
 
+- example 2
+
+  ```sql
+  set @hour := -1;
   
+  select @hour := @hour + 1 as HOUR,
+  (
+      select count(DATETIME) from ANIMAL_OUTS
+      where hour(DATETIME) = @hour
+  ) 
+  as COUNT
+  from ANIMAL_OUTS
+  where @hour < 23;
+  ```
+
+  hour가 0부터 23까지 해당하는 것의 칼럼들을 가져오기
 
 
 

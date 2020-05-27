@@ -57,8 +57,26 @@ NoSQL인 MongoDB에 대해 알아보자.
 
 [다운로드 페이지](https://www.mongodb.com/download-center/community) 로 가, 운영체제에 맞는 DB를 설치한다.
 
+#### 윈도우 설치
+
 기본 데이터 위치는 
-`C:\Program Files\MongoDB\Server\4.2\data\`이고, 로그 위치는 `C:\Program Files\MongoDB\Server\4.2\log\`이다.
+`C:\Program Files\MongoDB\Server\4.2\data\`이고, 로그 위치는 `C:\Program Files\MongoDB\Server\4.2\log\`이다.
+
+#### 서버 실행
+
+`mongod` 를 입력하면 서버가 실행된다.
+
+```
+C:\Users\>cd C:\Program Files\MongoDB\Server\3.2\bin
+C:\Program Files\MongoDB\Server\3.2\bin>mkdir C:\data\db
+C:\Program Files\MongoDB\Server\3.2\bin>mongod
+```
+
+매번 디렉터리를 옮기는 게 번거롭다면 환경변수에 `C:\Program Files\MongoDB\Server\3.2\bin`를 추가한다.
+
+#### 서버 접속
+
+터미널에 `mongo`를 입력한다.
 
 
 
@@ -88,6 +106,10 @@ NoSQL인 MongoDB에 대해 알아보자.
       ]
   }
   ```
+
+
+
+
 
 
 
