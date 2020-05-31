@@ -90,3 +90,7 @@ $ sudo python3 manage.py runserver 0.0.0.0:8000
 #### 참고
 
 [블로그](https://dailyheumsi.tistory.com/19)
+
+```html
+nohup python manage.py runserver 0.0.0.0:8000
+```
