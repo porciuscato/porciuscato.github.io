@@ -29,6 +29,18 @@ NoSQL Mongo DB에서 Database, Collection, Document 생성 및 제거
   > db
   ```
 
+- DB 리스트들을 확인하려면 `show dbs` 를 입력한다.
+
+  ```
+  > show dbs
+  ```
+
+  그런데 방금 만든 tutorial이 보이지 않는다. 보려면 최소 한 개의 Document를 추가해야 한다.
+
+  ```
+  > db.book.insert
+  ```
+
   
 
 
