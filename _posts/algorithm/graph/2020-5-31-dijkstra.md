@@ -73,6 +73,70 @@ def Dijkstra(G, r):
 
 
 
+#### 코드 리팩토링
+
+1. G가 N *N 행렬일 때
+
+   ```python
+   def dijkstra(G, s):
+       N = len(G)
+       distance = [1e9] * N
+       visited = [False] * N
+       parents = [None] * N
+       distance[s] = 0
+   
+       for _ in range(N):
+           mn = 1e9
+           m_idx = -1
+           for i in range(N):
+               if not visited[i] and distance[i] < mn:
+                   mn = distance[i]
+                   m_idx = i
+           visited[m_idx] = True
+           
+           for j in range(N):
+               if not visited[j] and G[m_idx][j] > 0 and G[m_idx][j] + mn < distance[j]:
+                   distance[j] = G[m_idx][j] + mn
+                   parents[j] = m_idx
+   ```
+
+2. G가 u, v, w 일 때
+
+   ```python	
+   def dijkstra(G, s):
+       N = len(G)
+       distance = [1e9] * N
+       visited = [False] * N
+       parents = [None] * N
+       distance[s] = 0
+   
+       for _ in range(N):
+           mn = 1e9
+           m_idx = -1
+           for i in range(N):
+               if not visited[i] and distance[i] < mn:
+                   mn = distance[i]
+                   m_idx = i
+           visited[m_idx] = True
+   
+           for u, v, w in G:
+               if not visited[u] and w + mn < distance[v]:
+                   distance[v] = mn + w
+                   parents[v] = m_idx
+   ```
+
+   
+
+   
+
+   
+
+
+
+
+
+
+
 ## 벨만-포드 알고리즘
 
 - 다익스트라와 달리 음의 가중치를 포함하는 그래프에서 최단 경로를 구한다.

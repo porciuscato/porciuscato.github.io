@@ -68,3 +68,33 @@ def MST_KRUSKAL(G):
   - 트리에 속한 노드들은 자신을 루트로 하는 서브트리의 높이를 랭크라는 이름으로 저장
 - 선택한 간선으로 두 개의 트리가 한 개의 트리로 합쳐질 때 각 트리에 해당하는 상호 배타 집합을 Union 연산으로 합침
   - 랭크 값이 작은 트리를 랭크 값이 큰 트리의 서브트리로 포함시킬 경우 트리에 포함된 노드들의 랭크 값 수정 불필요
+
+
+
+### \+ disjoint_set
+
+```python
+def make_set(x):
+    parent[x] = x
+    rank[x] = 0
+
+
+def find_set(x):
+    if x != parent[x]:
+        parent[x] = find_set(parent[x])
+    return parent[x]
+
+
+def link(x, y):
+    if rank[x] >= rank[y]:
+        parent[y] = x
+    else:
+        parent[x] = y
+    if rank[x] == rank[y]:
+        rank[x] += 1
+
+
+def union(x, y):
+    link(find_set(x), find_set(y))
+```
+
