@@ -7,7 +7,7 @@ tags: [javascript]
 categories: [development]
 ---
 
-
+자바스크립트의 주요 특성
 
 
 
@@ -49,5 +49,6 @@ categories: [development]
 
 출처: [nodejs.dev](https://nodejs.dev/learn)
 
+- [mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-
+- [learn javascript online](https://learnjavascript.online/)
