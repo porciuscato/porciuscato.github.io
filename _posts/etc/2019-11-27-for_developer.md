@@ -1189,3 +1189,15 @@ https://ui.toast.com/weekly-pick/ko_20160812/
 어썸 데브블로그 - IT 유용한 글 모음
 
 https://awesome-devblog.netlify.app/
+
+#### 유용한 사이트들
+
+https://awesome-devblog.netlify.app/
+
+https://metapost.dev/
+
+https://news.hada.io/
+
+https://github.com/Integerous/goQuality-dev-contents
+
+https://github.com/hyunjun/bookmarks
