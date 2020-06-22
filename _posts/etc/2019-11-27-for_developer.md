@@ -1201,3 +1201,13 @@ https://news.hada.io/
 https://github.com/Integerous/goQuality-dev-contents
 
 https://github.com/hyunjun/bookmarks
+
+\+ 신간 베스트셀러 도서 목차 읽기 및 키워드 확인
+
+\+ 이동시간을 활용한 팟캐스트 듣기
+
+\+ 각종 hub 사이트 방문하기
+
+\+ outstanding : IT 관련 분석 기사 https://outstanding.kr/
+
+\+ 포트폴리오 작성 사이트 [https://rxresu.me](https://rxresu.me/)
