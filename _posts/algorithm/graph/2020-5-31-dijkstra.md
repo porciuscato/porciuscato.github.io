@@ -75,12 +75,12 @@ def Dijkstra(G, r):
 
 #### 코드 리팩토링
 
-1. G가 N *N 행렬일 때
+1. G가 N *N 인접행렬일 때
 
    ```python
-   def dijkstra(G, s):
+   def dijkstra(G, s):											# s는 시작 노드
        N = len(G)
-       distance = [1e9] * N
+       distance = [1e9] * N									# s로부터 특정 노드까지의 거리
        visited = [False] * N
        parents = [None] * N
        distance[s] = 0
@@ -125,11 +125,80 @@ def Dijkstra(G, r):
                    parents[v] = m_idx
    ```
 
+3. G가 인접리스트일때
+
+   ```python
+   def dijkstra(G, s):
+       N = len(G)
+       distance = [MAX_VALUE] * N
+       visited = [False] * N
+       parents = [None] * N
+       distance[start] = 0
    
+       for _ in range(N):
+           mn = 1e9
+           m_idx = -1
+           for i in range(N):
+               if not visited[i] and distance[i] < mn:
+                   mn = distance[i]
+                   m_idx = i
+           visited[m_idx] = True
+   
+           for e, w in G[m_idx]:
+               if not visited[e] and w + mn < distance[e]:
+                   distance[e] = w + mn
+       return distance
+   ```
 
    
 
    
+
+### 다익스트라 우선순위 큐 활용 속도 개선
+
+위의 알고리즘은 $O(N^2)$ 의 복잡도이기에 정점의 수가 많아지면 비효율이 발생한다. 그렇기에 속도를 개선하기 위해서 우선순위 큐를 사용하자.
+
+1. G는 인접리스트
+
+   ```python
+   # 정점이 5개이며 번호는 0부터 시작한다. 한 요소당 e[0]은 인접한 노드, e[1]은 가중치다.
+   [
+       [(1, 2), (2, 3)], 
+       [(2, 4), (3, 5)], 
+       [(3, 6)], 
+       [], 
+       [(0, 1)]
+   ]
+   ```
+
+   ```python
+   import heapq
+   
+   def dijkstra(G, s):
+       N = len(G)
+       distance = [1e9] * N
+       distance[s] = 0
+       
+       que = []
+       # 가중치와 노드 순서로 힙큐에 넣는 이유는 가중치 오름차순으로 정렬하기 위함이다.
+       heapq.heappush(que, (distance[s], s))
+       
+       while que:
+           distance_until_now, node = heapq.heappop(que)
+           
+           if distance_until_now > distance[node]:
+               continue
+           for adjacent, cost in G[node]:
+               new_distance = distance_until_now + cost
+               if new_distance < distance[adjacent]:
+                   distance[adjacent] = new_distance
+                   heapq.heappush(que, (new_distance, adjacent))
+   ```
+
+   
+
+
+
 
 
 
