@@ -1184,3 +1184,30 @@ https://www.electronjs.org/
 web RTC
 
 https://ui.toast.com/weekly-pick/ko_20160812/
+
+
+어썸 데브블로그 - IT 유용한 글 모음
+
+https://awesome-devblog.netlify.app/
+
+#### 유용한 사이트들
+
+https://awesome-devblog.netlify.app/
+
+https://metapost.dev/
+
+https://news.hada.io/
+
+https://github.com/Integerous/goQuality-dev-contents
+
+https://github.com/hyunjun/bookmarks
+
+\+ 신간 베스트셀러 도서 목차 읽기 및 키워드 확인
+
+\+ 이동시간을 활용한 팟캐스트 듣기
+
+\+ 각종 hub 사이트 방문하기
+
+\+ outstanding : IT 관련 분석 기사 https://outstanding.kr/
+
+\+ 포트폴리오 작성 사이트 [https://rxresu.me](https://rxresu.me/)
