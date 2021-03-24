@@ -73,3 +73,11 @@ g++ -o test test.cpp
 
 g++을 설치할 경우 주로 `/usr/bin/g++` 경로에 설치가 된다. 이 경로를 입력해주고 vscode를 재실행하면 linting이 작동한다.
 
+### 디버거 사용하기
+
+디버거는 gdb를 사용한다. 터미널 창에서 설치하자.
+
+```bash
+sudo apt-get install build-essential gdb
+```
+
