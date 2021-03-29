@@ -160,6 +160,26 @@ urlpatterns = [
 
 
 
+## admin page 등록
+
+생성한 모델을 admin 페이지에서 수정이 가능하게 만들 수 있습니다.
+
+앱의 admin.py에 코드를 적습니다.
+
+`accounts/admin.py`
+
+```python
+from django.contrib import admin
+from .models import Human
+
+class HumanAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'name', 'alias', )
+
+admin.site.register(Human, HumanAdmin)
+```
+
+
+
 # 서버 실행
 
 서버를 실행하면 rest framework를 확인할 수 있습니다.
