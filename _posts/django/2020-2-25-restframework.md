@@ -198,4 +198,4 @@ $ python manage.py runserver
 
 - [medium 글](https://medium.com/@BennettGarner/build-your-first-rest-api-with-django-rest-framework-e394e39a482c)
 
-+ [걍 읽어봐](https://simpleisbetterthancomplex.com/tutorial/2018/02/03/how-to-use-restful-apis-with-django.html)
++ [django api 참고 글](https://simpleisbetterthancomplex.com/tutorial/2018/02/03/how-to-use-restful-apis-with-django.html)
